@@ -1,0 +1,389 @@
+$lg: 1440px;
+$md: 1280px;
+$sm: 1040px;
+$xs: 910px;
+$xxs: 524px;
+$mob: 320px;
+$yellow: #F3C623;
+
+h1 {
+    font-size: 28px;
+    margin: 0;
+    padding-top: 20px;
+}
+
+h2 {
+    font-size: 22px;
+    margin: 0;
+}
+
+h3 {
+    font-size: 21px;
+}
+
+h4 {
+    font-size: 17px;
+    margin: 0;
+  
+}
+
+
+
+@font-face { 
+    font-family: 'TTSupermolotNeue'; 
+    src: url('./TTSupermolotNeue-Medium.woff2');    
+    font-weight: normal;
+    font-style: 500;      }
+
+@font-face { 
+    font-family: 'TTSupermolotNeue'; 
+    src: url('./TTSupermolotNeue-Regular.woff2');    
+    font-weight: normal;
+    font-style: 400;      }
+
+
+html {
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    font-family: 'TTSupermolotNeue';
+    overflow: scroll;
+    
+}
+
+.container {
+
+    margin-top: 0px;
+    margin-left: 160px;
+
+    @media screen and (max-width: $lg) {
+      width: 1440px;
+    }
+    @media screen and (max-width: $md) {
+      width: 1280px;
+    }
+    @media screen and (max-width: $sm) {
+      width: 95%;
+    }
+    @media screen and (max-width: $xs) {
+      width: 95%;
+    }
+    @media screen and (max-width: $xxs) {
+      width: 95%;
+    }
+  
+  }
+
+.header {
+    background-color: $yellow;
+    width: 96px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14),
+     0px 3px 4px rgba(0, 0, 0, 0.12),
+     0px 1px 5px rgba(233, 233, 233, 0.2);
+    
+ 
+    
+}
+
+.logo img{
+    width: 65px;
+    padding: 15px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  
+}
+
+nav ul {
+   
+   left: 0;
+   position: absolute;
+   padding-left: 0px;
+   top: 25%;
+   
+}
+
+nav li {
+    transform: rotate(-90deg);
+    height: 77px;
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 500;
+    align-items: center;
+    
+}
+
+nav li::hover {
+    font-size: 20px;  
+}
+
+ nav li div {
+    background-color: black;
+    width: 1px;
+    height: 23px;
+
+ }
+
+ hr {
+     color: black;
+     background-color: #cdcdcd;
+ }
+
+ .content {
+     
+     margin-top: 0;
+ }
+
+ .gallery {
+     margin-top: 50px;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     max-width: 70%;
+ }
+
+ .card {
+     width: 269px;
+     height: 362px;
+     border-radius: 20px;
+     box-shadow: 0px 2px 4px rgba(153, 153, 153, 0.14),
+     0px 3px 4px rgba(153, 153, 153, 0.12),
+     0px 1px 5px rgba(233, 233, 233, 0.2);
+     padding: 20px;
+     padding-bottom: 5px;
+     margin-right: 15px;
+     margin-bottom: 15px;
+     box-sizing: border-box;       
+}
+
+.img_wrp {
+     width: 170px;
+     height: 155px;
+    margin: 0 auto;
+}
+     
+
+
+.card_info {
+     height: 86px;
+}
+
+.photo {
+    height: 170px; 
+    margin: 0 auto;
+    #napitki {
+        width: 60px;
+    }
+}
+
+
+
+.shaurmicon {
+     height: 62px;
+     width: 61px;
+     position: absolute;
+
+}
+
+
+ .card_title {
+   display: flex; 
+   margin-bottom: 0; 
+   margin-top: 20px;
+   p {
+       text-align: center;
+       align-self: center;
+       padding-left: 10px;
+       height: 15px;
+       margin: 0;
+       font-size: 15px;
+   }
+   
+ }
+
+ .description {
+     font-size: 14px;
+     font-weight: 300;
+     font-family: 'Geometria';
+     padding: 0;
+     color: #838383;
+ }
+
+ .price {
+     font-size: 21px;
+     font-family: 'Geometria';
+     font-weight: 500;
+     
+ }
+
+ .card button {
+    
+        width: 118px;
+        height: 40px;
+        border-radius: 15px;
+        background-color: $yellow;
+        text-align: center;
+        font-size: 14px;
+        font-family: 'Geometria';
+        border: none;
+        font-weight: 500;
+        align-self: center; 
+        box-shadow: 0px 2px 4px rgba(153, 153, 153, 0.14),
+        0px 3px 4px rgba(153, 153, 153, 0.12),
+         0px 1px 5px rgba(233, 233, 233, 0.2); 
+             
+
+ }
+
+.card:hover {
+    box-shadow: 0px 8px 10px rgba(153, 153, 153, 0.14),
+     0px 3px 14px rgba(153, 153, 153, 0.12),
+     0px 4px 5px rgba(233, 233, 233, 0.2);
+}
+
+.card button:hover {
+    background-color: #fbbc04;
+}
+
+.card button:active {
+    background-color: #fbbc04;
+    box-shadow: 0px 8px 10px rgba(153, 153, 153, 0.14),
+     0px 3px 14px rgba(153, 153, 153, 0.12),
+     0px 4px 5px rgba(233, 233, 233, 0.2);
+}
+
+ .price_wrp {
+    justify-content: space-between;
+    display: flex;
+ }
+
+ #dostavka, #oplata {
+    box-shadow: 0px 2px 4px rgba(153, 153, 153, 0.14),
+    0px 3px 4px rgba(153, 153, 153, 0.12),
+     0px 1px 5px rgba(233, 233, 233, 0.2);
+     height: 222px;
+     width: 360px;
+     margin-right: 15px;
+     padding: 40px;
+     border-radius: 20px;
+     h4 {
+         padding-top: 20px;
+     }
+ }
+
+ .dostav_cards {
+    display: flex;
+    margin-top: 50px;    
+ }
+
+ .dostavka_price { 
+     p {
+         margin-bottom: -10;
+     }
+    span {
+    margin: 0;
+    padding-top: 0;
+     }
+     font-weight: 400px;
+     margin-bottom: 30px;
+     margin-top: 15px;
+ }
+
+ .big {
+    font-size: 40px;
+    margin: 0;
+    margin-top: 10px;
+    
+ }
+
+ .bold {
+     font-weight: 600;
+ }
+
+ .icons {
+     display: flex;
+    padding-top: 15px; 
+    padding-left: -10px
+ }
+
+ .footer {
+     margin-top: 150px;
+     color: white;
+     background-color: #3c663b;
+     display: flex;
+     padding-left: 160px;
+     padding-right: 100px;
+     justify-content: space-between;
+     align-items: center;
+     width: 60%;
+     height: 163px;
+     h3 {
+         font-weight: 400;
+     }
+     h3,p {
+         margin: 0;
+     }
+     .big {
+         margin-top: 5px;
+     }
+ }
+
+ .insta {
+     background-image: url(/img/insta.svg);
+     height: 37px;
+     width: 37px;
+ }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+    color: blue;
+}
+
+.cart {
+    
+    position: fixed;
+    height: 100%;
+    right: 0;
+    width: 380px;
+    text-align: center;
+    box-shadow: 0px 2px 4px rgba(153, 153, 153, 0.14),
+    0px 3px 4px rgba(153, 153, 153, 0.12),
+     0px 1px 5px rgba(233, 233, 233, 0.2);
+     background-color: white;
+    button {
+        width: 300px;
+        height: 60px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: #95D6A4;
+        width: 100%;
+        border-radius:20px;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 22px;
+        font-weight: 500;
+        margin-bottom: 15px;
+        
+
+    }
+}

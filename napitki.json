@@ -1,0 +1,65 @@
+{
+    "10" : {
+        "name" : "Барбариска",
+        "description": "Безалкогольный сильногазированный тонизирующий напиток",
+        "cost": "80 р",
+        "icon": "/img/icon_barbariska.png",
+        "image": "/img/barbariska.png"
+    },
+
+    "12" : {
+        "name" : "Вишня",
+        "description": "Безалкогольный сильногазированный тонизирующий напиток",
+        "cost": "80 р",
+        "icon": "/img/icon_cherry.png",
+        "image": "/img/cherry.png"
+    },
+
+    "13" : {
+        "name" : "Груши",
+        "description": "Безалкогольный сильногазированный тонизирующий напиток",
+        "cost": "80 р",
+        "icon": "/img/icon_dushes.png",
+        "image": "/img/grushi.png"
+    },
+
+    "14" : {
+        "name" : "Дюшес",
+        "description": "Безалкогольный сильногазированный тонизирующий напиток",
+        "cost": "80 р",
+        "icon": "/img/icon_dushes.png",
+        "image": "/img/dushes.png"
+    },
+
+    "15" : {
+        "name" : "Лимонад",
+        "description": "Безалкогольный сильногазированный тонизирующий напиток",
+        "cost": "80 р",
+        "icon": "/img/icon_limonad.png",
+        "image": "/img/limonad.png"
+    },
+
+    "16" : {
+        "name" : "Тархун",
+        "description": "Безалкогольный сильногазированный тонизирующий напиток",
+        "cost": "80 р",
+        "icon": "/img/icon_tarhun.png",
+        "image": "/img/tarhun.png"
+    },
+
+    "17" : {
+        "name" : "Серноводская",
+        "description": "Безалкогольный сильногазированный тонизирующий напиток",
+        "cost": "80 р",
+        "icon": "/img/icon_sernovod.png",
+        "image": "/img/sernovod.png"
+    },
+
+    "18" : {
+        "name" : "Серноводская с йодом и фтором",
+        "description": "Безалкогольный сильногазированный тонизирующий напиток",
+        "cost": "80 р",
+        "icon": "/img/icon_sernovod.png",
+        "image": "/img/sernovod-jod.png"
+    }
+}
