@@ -3,7 +3,7 @@ var goods;
 var napitki;
 
 $('document').ready(function(){
-  addd();
+ 
   loadGoods();
   loadNapitki();
   showMiniCart();
