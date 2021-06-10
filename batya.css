@@ -178,7 +178,7 @@ hr {
 
 .img_wrp {
   width: 170px;
-  height: 155px;
+  height: 165px;
   margin: 0 auto;
 }
 
@@ -193,6 +193,22 @@ hr {
 
 .photo #napitki {
   width: 60px;
+}
+
+.drinks {
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 180px;
+}
+
+.drinks img {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: 15%;
+  left: -10%;
 }
 
 .shaurmicon {

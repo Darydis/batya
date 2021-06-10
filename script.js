@@ -1,4 +1,4 @@
-let cart = {}; //корзина
+var cart = {}; //корзина
 var goods;
 var napitki;
 
@@ -6,7 +6,7 @@ $('document').ready(function(){
  
   loadGoods();
   loadNapitki();
-  showMiniCart();
+  showCart();
 });
 
 
@@ -40,12 +40,12 @@ function loadGoods() {
 
     }
     $('#goods').html(out);
-    $('button.add-to-cart').on('click', addToCart);
+    //$('button.add-to-cart').on('click', addToCart);
     return(goods);
     
   });
 }
-console.log(goods);
+//console.log(goods);
 
 function loadNapitki() {
   $.getJSON('napitki.json', function(data) {
@@ -56,8 +56,11 @@ function loadNapitki() {
       
       out += '<div class="card">';
       out += '<div class="img_wrp">';
-      out += '<img class="shaurmicon" src="'+data[key].icon+'">';
-      out += '<img class="photo" src="'+data[key].image+'">';
+      out += '<div class="drinks" style="background-image: url('+data[key].image+');">';
+      out += '<img src="'+data[key].icon+'">';
+     // out += '<img class="shaurmicon" src="'+data[key].icon+'">';
+      //out += '<img class="photo" src="'+data[key].image+'">';
+      out += '</div>';
       out += '</div>';
       out += '<div class="card_info">';
       out += '<div class="card_title">';
@@ -77,13 +80,13 @@ function loadNapitki() {
     $('#napitki').html(out);
     $('button.add-to-cart').on('click', addToCart);
     
-    return(napitki);
+   
    
 
   })
- 
+  return(napitki);
 }
-console.log(napitki);
+//console.log(napitki);
 
 function addToCart() {
   //добавляем товар в корзину
@@ -97,7 +100,7 @@ function addToCart() {
   }
   localStorage.setItem('cart', JSON.stringify(cart) );
   console.log(cart);
-  showMiniCart();
+  showCart();
 }
 
 function ckeckCart(){
@@ -107,6 +110,7 @@ function ckeckCart(){
   }
 }
 
+/*
 function showMiniCart(){
   //показываю содержимое корзины
   let out = '';
@@ -115,3 +119,22 @@ function showMiniCart(){
   }
   $('#mini-cart').html(out);
 }
+*/
+
+function showCart() {
+  var out = '';
+  for (var key in cart) {
+    out += '<button class="delete">x</button>';
+  }
+  $('#my-cart').html(out);
+}
+
+showCart();
+
+$.when($.getJSON("goods.json"), $.getJSON("napitki.json")).done(function (
+  data1,
+  data2
+) {
+  console.log(data1[0]);
+  console.log(data2[0]);
+});

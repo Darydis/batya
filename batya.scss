@@ -172,7 +172,7 @@ nav li::hover {
 
 .img_wrp {
      width: 170px;
-     height: 155px;
+     height: 165px;
     margin: 0 auto;
 }
      
@@ -191,6 +191,22 @@ nav li::hover {
 }
 
 
+.drinks {
+    position: relative;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 180px;
+    
+    img {
+        
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        top: 15%;
+        left: -10%;
+    }
+}
 
 .shaurmicon {
      height: 62px;
