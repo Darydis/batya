@@ -1,64 +1,162 @@
 {
     "10" : {
-        "name" : "Барбариска",
+        "name" : "Напиток",
+        "taste" : "Барбариска",
         "description": "Безалкогольный сильногазированный тонизирующий напиток",
-        "cost": "80 р",
+        "cost": 80,
         "icon": "/img/icon_barbariska.png",
         "image": "/img/barbariska.png"
     },
 
     "12" : {
-        "name" : "Вишня",
+        "name" : "Напиток",
+        "taste" : "Вишня",
         "description": "Безалкогольный сильногазированный тонизирующий напиток",
-        "cost": "80 р",
+        "cost": 80,
         "icon": "/img/icon_cherry.png",
         "image": "/img/cherry.png"
     },
 
     "13" : {
-        "name" : "Груши",
+        "name" : "Напиток",
+        "taste" : "Груши",
         "description": "Безалкогольный сильногазированный тонизирующий напиток",
-        "cost": "80 р",
+        "cost": 80,
         "icon": "/img/icon_dushes.png",
         "image": "/img/grushi.png"
     },
 
     "14" : {
-        "name" : "Дюшес",
+        "name" : "Напиток",
+        "taste" : "Дюшес",
         "description": "Безалкогольный сильногазированный тонизирующий напиток",
-        "cost": "80 р",
+        "cost": 80,
         "icon": "/img/icon_dushes.png",
         "image": "/img/dushes.png"
     },
 
     "15" : {
-        "name" : "Лимонад",
+        "name" : "Напиток",
+        "taste" : "Лимонад",
         "description": "Безалкогольный сильногазированный тонизирующий напиток",
-        "cost": "80 р",
+        "cost": 80,
         "icon": "/img/icon_limonad.png",
         "image": "/img/limonad.png"
     },
 
     "16" : {
-        "name" : "Тархун",
+        "name" : "Напиток",
+        "taste" : "Трахун",
         "description": "Безалкогольный сильногазированный тонизирующий напиток",
-        "cost": "80 р",
+        "cost": 80,
         "icon": "/img/icon_tarhun.png",
         "image": "/img/tarhun.png"
     },
 
     "17" : {
-        "name" : "Серноводская",
-        "description": "Безалкогольный сильногазирgованный тонизирующий напиток",
-        "cost": "80 р",
+        "name" : "Вода",
+        "taste" : "Серноводская",
+        "description": "Минеральная вода",
+        "cost": 80,
         "icon": "/img/icon_sernovod.png",
         "image": "/img/sernovod.png"
     },
 
-    "18" : {
-        "name" : "Серноводская (Йод + Фтор)",
-        "description": "Безалкогольный сильногазированный тонизирующий напиток",
-        "cost": "80 р",
+    "19" : {
+        "name" : "Вода",
+        "taste" : "Серноводская (Йод + Фтор)",
+        "description": "Минеральная вода",
+        "cost": 80,
+        "icon": "/img/icon_sernovod.png",
+        "image": "/img/sernovod-jod.png"
+    },
+
+    "20" : {
+        "name" : "Вода",
+        "taste" : "Серноводская (Йод + Фтор)",
+        "description": "Минеральная вода",
+        "cost": 80,
+        "icon": "/img/icon_sernovod.png",
+        "image": "/img/sernovod-jod.png"
+    },
+
+    "21" : {
+        "name" : "Вода",
+        "taste" : "Серноводская (Йод + Фтор)",
+        "description": "Минеральная вода",
+        "cost": 80,
+        "icon": "/img/icon_sernovod.png",
+        "image": "/img/sernovod-jod.png"
+    },
+
+    "22" : {
+        "name" : "Вода",
+        "taste" : "Серноводская (Йод + Фтор)",
+        "description": "Минеральная вода",
+        "cost": 80,
+        "icon": "/img/icon_sernovod.png",
+        "image": "/img/sernovod-jod.png"
+    },
+
+    "23" : {
+        "name" : "Вода",
+        "taste" : "Серноводская (Йод + Фтор)",
+        "description": "Минеральная вода",
+        "cost": 80,
+        "icon": "/img/icon_sernovod.png",
+        "image": "/img/sernovod-jod.png"
+    },
+
+    "24" : {
+        "name" : "Вода",
+        "taste" : "Серноводская (Йод + Фтор)",
+        "description": "Минеральная вода",
+        "cost": 80,
+        "icon": "/img/icon_sernovod.png",
+        "image": "/img/sernovod-jod.png"
+    },
+
+    "25" : {
+        "name" : "Вода",
+        "taste" : "Серноводская (Йод + Фтор)",
+        "description": "Минеральная вода",
+        "cost": 80,
+        "icon": "/img/icon_sernovod.png",
+        "image": "/img/sernovod-jod.png"
+    },
+
+    "26" : {
+        "name" : "Вода",
+        "taste" : "Серноводская (Йод + Фтор)",
+        "description": "Минеральная вода",
+        "cost": 80,
+        "icon": "/img/icon_sernovod.png",
+        "image": "/img/sernovod-jod.png"
+    },
+
+    "27" : {
+        "name" : "Вода",
+        "taste" : "Серноводская (Йод + Фтор)",
+        "description": "Минеральная вода",
+        "cost": 80,
+        "icon": "/img/icon_sernovod.png",
+        "image": "/img/sernovod-jod.png"
+    },
+
+    "28" : {
+        "name" : "Вода",
+        "taste" : "Серноводская (Йод + Фтор)",
+        "description": "Минеральная вода",
+        "cost": 80,
+        "icon": "/img/icon_sernovod.png",
+        "image": "/img/sernovod-jod.png"
+    },
+
+    "29" : {
+        "name" : "Вода",
+        "taste" : "Серноводская (Йод + Фтор)",
+        "description": "Минеральная вода",
+        "cost": 80,
         "icon": "/img/icon_sernovod.png",
         "image": "/img/sernovod-jod.png"
     }
