@@ -1,7 +1,6 @@
 var cart = {}; //корзина
 var goods;
 var napitki;
-var total;
 
 $('document').ready(function(){
  
@@ -113,7 +112,6 @@ function checkCart(){
     cart = JSON.parse (localStorage.getItem('cart'));
   }
   else {
-
     console.log('yrrrr');
     localStorage.setItem('total', 0 );
   }
@@ -129,7 +127,7 @@ function totalToHead() {
 }
 
 function showCart() {
-total = 0;
+  var total = 0;
 if (!localStorage.getItem('total')){
 localStorage.setItem('total', 0);
 }
@@ -219,10 +217,9 @@ localStorage.setItem('total', 0);
     }
     else {
       delete cart[article];
-      checkCart();
     }
     localStorage.setItem('cart', JSON.stringify(cart));
-    
+    checkCart();
     showCart();
     
   }
