@@ -268,6 +268,7 @@ hr {
       align-self: center;
   -webkit-box-shadow: 0px 2px 4px rgba(153, 153, 153, 0.14), 0px 3px 4px rgba(153, 153, 153, 0.12), 0px 1px 5px rgba(233, 233, 233, 0.2);
           box-shadow: 0px 2px 4px rgba(153, 153, 153, 0.14), 0px 3px 4px rgba(153, 153, 153, 0.12), 0px 1px 5px rgba(233, 233, 233, 0.2);
+  cursor: pointer;
 }
 
 .card:hover {
@@ -465,7 +466,7 @@ a {
 .cart-product__name {
   font-size: 12px;
   line-height: 16px;
-  width: 166px;
+  width: 130px;
   padding-right: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -483,8 +484,8 @@ a {
   width: calc(100% - 50px);
 }
 
-.cart-product_price {
-  font-weight: 600;
+.cart-product__price {
+  font-weight: 500;
 }
 
 .cart-product__quantity-container {
@@ -500,7 +501,25 @@ a {
 .cart-product__quantity-slider {
   width: 88px;
   position: absolute;
-  right: -48px;
+  right: -32px;
+}
+
+.cart-product:hover {
+  background-color: #f9f9f9;
+}
+
+.cart-product:hover .cart-product__quantity-container {
+  overflow: visible;
+}
+
+.cart-product:hover .cart-product__quantity-slider {
+  right: -25px;
+  -webkit-transition: right 0.2s ease;
+  transition: right 0.2s ease;
+}
+
+.cart-product:hover button {
+  cursor: pointer;
 }
 
 .product-quantity-controls {
@@ -519,6 +538,18 @@ a {
 
 .product-quantity-controls__plus, .product-quantity-controls__minus {
   border: none;
+  background-color: transparent;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+}
+
+.product-quantity-controls__plus {
+  margin-left: 8px;
+}
+
+.product-quantity-controls__minus {
+  margin-right: 8px;
 }
 
 .product-quantity-controls__value {
@@ -634,5 +665,6 @@ a {
   font-weight: 600;
   line-height: 48px;
   font-size: 15px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=batya.css.map */

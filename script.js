@@ -1,6 +1,7 @@
 var cart = {}; //корзина
 var goods;
 var napitki;
+var total;
 
 $('document').ready(function(){
  
@@ -101,46 +102,55 @@ function addToCart() {
   localStorage.setItem('cart', JSON.stringify(cart) );
   
   showCart();
+  //totalToHead();
+  
 }
 
 function checkCart(){
   //Проверяю наличие корзины в localStorage
   if ( localStorage.getItem('cart') != null) {
+    
     cart = JSON.parse (localStorage.getItem('cart'));
   }
-}
+  else {
 
-
-/*function showMiniCart(){
-  //показываю содержимое корзины
-  let out = '';
-  for (let i in cart) {
-    out += i + '--- ' + cart[i]+'<br>';
+    console.log('yrrrr');
+    localStorage.setItem('total', 0 );
   }
-  $('#mini-cart').html(out);
 }
-*/
 
+
+
+
+function totalToHead() {
+  let out = '<span>'+localStorage.getItem('total')+' ₽</span>';
+  $('#head-total').html(out);
+  $('#submit').html(out);
+}
 
 function showCart() {
+total = 0;
+if (!localStorage.getItem('total')){
+localStorage.setItem('total', 0);
+}
+
   
-  $.when($.getJSON("goods.json"), $.getJSON("napitki.json")).done(function (data1, data2) {
+  $.when($.getJSON("goods.json"), $.getJSON("napitki.json")).done(function (data1,data2) {
   
   var tovary = Object.assign(data1[0], data2[0]);
   //console.log(data1);
   var out = '';
   
   
-    out += '<div class="cart-title__wrp">'; //вывожу шапку корзины
+    /*=out += '<div class="cart-title__wrp">'; //вывожу шапку корзины
     out += '<div class="cart-icon">';
     out += '<a href="#"><img src="img/icon_cart.svg"></a>';
     out += '</div>';
     out += '<div class="summa_zakaza">';
-    out += '<span>'+localStorage.getItem('total')+'</span>';
+    //out += '<span>'+localStorage.getItem('total')+'</span>';
     out += '</div>';
-    out += '</div>';
-    var total = 0;
-    localStorage.setItem('total', 0);
+    out += '</div>';*/
+    
            // total = JSON.parse (localStorage.getItem('total'));
            // console.log(total);
       for (let key in cart) { //вывожу содержимое корзины
@@ -150,22 +160,24 @@ function showCart() {
         out += '<div class="cart-product__name">'+tovary[key].name+' '+tovary[key].taste+'</div>';
         out += '<div class="cart-product__quantity-container">';
         out += '<div class="product-quantity-controls__container cart-product__quantity-slider">';
-        out += '<button type="button" class="product-quantity-controls__minus">-</button>';
+        out += '<button type="button" class="product-quantity-controls__minus" data-art="'+key+'"><svg width="24" height="24"><line x1="5" y1="11" x2="22" y2="11" stroke-width="2" stroke="#3c663b" /></svg></button>';
         out += '<span class="product-quantity-controls__value">'+cart[key]+'</span>';
-        out += '<button type="button" class="product-quantity-controls__plus">+</button>';
+        out += '<button type="button" class="product-quantity-controls__plus" data-art="'+key+'"><svg width="24" height="24"><line x1="0" y1="11" x2="18" y2="11" stroke-width="2" stroke="#3c663b" /><line x1="9" y1="2" x2="9" y2="20" stroke-width="2" stroke="#3c663b" /></svg></button>';
         out += '</div>';
         out += '</div>';
         out += '</div>';
         out += '<div class="cart-product__price-wrp">';
-        out += '<div class="cart-product__price">'+cart[key]*tovary[key].cost+'</div>';
+        out += '<div class="cart-product__price">'+cart[key]*tovary[key].cost+' ₽</div>';
         out += '</div>';
         out += '</li>';
+        
     
   total += cart[key]*tovary[key].cost; //считаю общую сумму заказа
-  localStorage.setItem('total', parseInt(localStorage.getItem('total')) + cart[key]*tovary[key].cost); 
-    
+  localStorage.setItem('total', total); 
+  console.log('total');
+      
       }
-       /*if(localStorage.getItem('cart') != null) { //проверяю, есть ли товары в корзине
+       if(localStorage.getItem('cart') != null) { //проверяю, есть ли товары в корзине
     
           if (localStorage.getItem('total') < 600) {//вывожу стоимость доставки, если сумма заказа меньше 600
             let dostavka = 600 - localStorage.getItem('total');
@@ -187,15 +199,40 @@ function showCart() {
           out += '</div>';
           out += '</div>';
         }
-      }*/
+      }
   $('#my-cart').html(out);
-  //console.log(data1[0]);
-  //console.log(data2[0]);
+  totalToHead();
+  $('.product-quantity-controls__plus').on('click', plusTovary);
+  $('.product-quantity-controls__minus').on('click', minusTovary);
+  
+  function plusTovary(){ //увеличиваем кол-во товара
+    var article = $(this).attr('data-art');
+    cart[article]++;
+    localStorage.setItem('cart', JSON.stringify(cart));
+    showCart();
+  }
+
+  function minusTovary(){ //уменьшаем кол-во товаров
+    var article = $(this).attr('data-art');
+    if (cart[article]>1) {
+      cart[article]--;
+    }
+    else {
+      delete cart[article];
+      checkCart();
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+    showCart();
+    
+  }
+
 });
 
 }
 
-showCart();
+//showCart();
+
 
 /*
 function getTotal(total){

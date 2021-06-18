@@ -267,8 +267,8 @@ nav li::hover {
         align-self: center; 
         box-shadow: 0px 2px 4px rgba(153, 153, 153, 0.14),
         0px 3px 4px rgba(153, 153, 153, 0.12),
-         0px 1px 5px rgba(233, 233, 233, 0.2); 
-             
+        0px 1px 5px rgba(233, 233, 233, 0.2); 
+        cursor: pointer;
 
  }
 
@@ -398,7 +398,6 @@ a {
         margin: 0;
         padding: 0;
     }
-    
 }
 
 .cart-title__wrp {
@@ -438,7 +437,7 @@ a {
     &__name {
         font-size: 12px;
         line-height: 16px;
-        width: 166px;
+        width: 130px;
         padding-right: 10px;
         box-sizing: border-box;
         text-align: left;
@@ -452,8 +451,8 @@ a {
         width: calc(100% - 50px);
         
     }
-    &_price {
-        font-weight: 600;
+    &__price {
+        font-weight: 500;
     }
     &__quantity-container {
         width: 24px;
@@ -467,11 +466,27 @@ a {
     &__quantity-slider {
         width: 88px;
         position: absolute;
-        right: -48px;
+        right: -32px;
     }
+   &:hover {
+       background-color: #f9f9f9;
+   }
+    
 }
 
-
+.cart-product:hover {
+    
+    .cart-product__quantity-container {
+    overflow: visible;
+    }
+    .cart-product__quantity-slider {
+    right: -25px;
+    transition: right 0.2s ease;
+    }
+    button {
+        cursor: pointer;
+    }
+}
 
 
 .product-quantity-controls {
@@ -482,6 +497,17 @@ a {
     }
     &__plus, &__minus {
         border: none;
+        //font-size: 30px;
+        background-color: transparent;
+        width: 24px;
+        height: 24px;
+        padding: 0;
+    }
+    &__plus {
+        margin-left: 8px;
+    }
+    &__minus {
+        margin-right: 8px;
     }
     background-color: transparent;
 }
@@ -585,5 +611,6 @@ a {
         font-weight: 600;
         line-height: 48px;
         font-size: 15px;
+        cursor: pointer;
     }
 }
