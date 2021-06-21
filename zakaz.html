@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <link rel="stylesheet" href="batya.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="script.js"></script>
+        <script src=""></script>
+    </head>
+</html>
+<body>
+    <div class="outer_container">
+        <div>
+            <h1>Оформление заказа</h1>
+            <hr>
+        </div>
+        <div class="form">
+            <form class="form" method="post" action="/send.php">
+                <div class="form__item">
+                    <input class="form__input" type="text" name="name" required>
+                    <label class="form__label">Ваше имя</label>
+                </div>
+                <div class="form__item">
+                    <input class="form__input" type="text" name="phone" required>
+                    <label class="form__label">Номер телефона</label>
+                </div>
+                <input class="form__input btn" type="submit" value="Отправить">
+                <input type="hidden" name="act" value="order">
+            </form>
+        </div>
+        <div class="cart">
+            <div class="cart_wrp" >
+                <div class="cart-title__wrp">
+                    <div class="cart-icon">
+                        <a href="#"><img src="img/icon_cart.svg"></a>
+                    </div>
+                    <div class="summa_zakaza" id="head-total">
+                        
+                    </div>
+                </div>
+                <ul class="cart__list" id="my-cart">
+
+                </ul>
+
+                <div class="cart-submit">
+                    <button type="button">
+                        Заказать
+                        <span class="cart-submit__total" id="submit"></span>
+                     </button>
+                </div>
+                
+            </div>
+        </div> 
+    </div>
+</body>

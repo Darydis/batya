@@ -417,7 +417,7 @@ a {
 
 .cart-title__wrp {
   margin: 0 auto;
-  padding: 16px 40px;
+  padding: 20px 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -666,5 +666,9 @@ a {
   line-height: 48px;
   font-size: 15px;
   cursor: pointer;
+}
+
+.add-or-remove {
+  visibility: hidden;
 }
 /*# sourceMappingURL=batya.css.map */

@@ -11,7 +11,7 @@ $('document').ready(function(){
   showCart();
 });
 
-
+$('div.cart-title__wrp').on('click', console.log('op'));//function(){$( "div.cart" ).toggleClass( "add-or-remove" )});
 
 function loadGoods() {
   $.getJSON('goods.json', function(data) {
@@ -107,50 +107,46 @@ function addToCart() {
 
 function checkCart(){
   //Проверяю наличие корзины в localStorage
-  if ( localStorage.getItem('cart') != null) {
+  console.log(localStorage.getItem("cart"));
+  if (!localStorage.getItem("cart")){
+    
+    localStorage.setItem('total', 0 );
+    totalToHead();
+  }
+  else if (localStorage.getItem("cart")) {
     
     cart = JSON.parse (localStorage.getItem('cart'));
   }
-  else {
-    console.log('yrrrr');
-    localStorage.setItem('total', 0 );
-  }
+  
 }
 
-
-
-
-function totalToHead() {
-  let out = '<span>'+localStorage.getItem('total')+' ₽</span>';
+function totalToHead() { //выводим сумму заказа в хедер и в кнопку
+  var summary;
+  if (!Object.keys(cart).length == 0) {
+    if (localStorage.getItem('total') < 600) {
+      summary = JSON.parse(localStorage.getItem('total')) + 99;
+    }
+    else if (localStorage.getItem('total') >= 600) summary = localStorage.getItem('total');
+    let out = '<span>'+summary+' ₽</span>';
   $('#head-total').html(out);
   $('#submit').html(out);
+  }
+  else { //если в корзине ничего нет, то ничего не выводим
+  out = '';
+  $('#head-total').html(out);
+  $('#submit').html(out);
+  }
 }
 
 function showCart() {
   var total = 0;
-if (!localStorage.getItem('total')){
-localStorage.setItem('total', 0);
-}
 
-  
   $.when($.getJSON("goods.json"), $.getJSON("napitki.json")).done(function (data1,data2) {
   
   var tovary = Object.assign(data1[0], data2[0]);
   //console.log(data1);
   var out = '';
   
-  
-    /*=out += '<div class="cart-title__wrp">'; //вывожу шапку корзины
-    out += '<div class="cart-icon">';
-    out += '<a href="#"><img src="img/icon_cart.svg"></a>';
-    out += '</div>';
-    out += '<div class="summa_zakaza">';
-    //out += '<span>'+localStorage.getItem('total')+'</span>';
-    out += '</div>';
-    out += '</div>';*/
-    
-           // total = JSON.parse (localStorage.getItem('total'));
-           // console.log(total);
       for (let key in cart) { //вывожу содержимое корзины
     
         out += '<li class="cart-product cursorHover">';
@@ -172,12 +168,14 @@ localStorage.setItem('total', 0);
     
   total += cart[key]*tovary[key].cost; //считаю общую сумму заказа
   localStorage.setItem('total', total); 
-  console.log('total');
-      
+  console.log(total);
+  
       }
-       if(localStorage.getItem('cart') != null) { //проверяю, есть ли товары в корзине
+       if(!Object.keys(cart).length == 0) { //проверяю, есть ли товары в корзине
+        
+          if (localStorage.getItem('total') < 600) {
+           //вывожу стоимость доставки, если сумма заказа меньше 600
     
-          if (localStorage.getItem('total') < 600) {//вывожу стоимость доставки, если сумма заказа меньше 600
             let dostavka = 600 - localStorage.getItem('total');
             out += '<div class="cart-delivery">';
             out += '<div class="cart-delivery__content">';
@@ -189,51 +187,52 @@ localStorage.setItem('total', 0);
             out += '<span class="cart-alert__text">Закажите еще на '+dostavka+' ₽ для бесплатной доставки</span>';
             out += '</div>';
           }
-        else if ((localStorage.getItem('total') >= 600)){
-          out += '<div class="cart-delivery">';
-          out += '<div class="cart-delivery__content">';
-          out += '<span class="cart-delivery__title">Доставка</span>';
-          out += '<span class="cart-delivery__cost"> 0 ₽</span>';
-          out += '</div>';
-          out += '</div>';
+          else if ((localStorage.getItem('total') >= 600)){
+            out += '<div class="cart-delivery">';
+            out += '<div class="cart-delivery__content">';
+            out += '<span class="cart-delivery__title">Доставка</span>';
+            out += '<span class="cart-delivery__cost"> 0 ₽</span>';
+            out += '</div>';
+            out += '</div>';
         }
       }
+      
   $('#my-cart').html(out);
-  totalToHead();
   $('.product-quantity-controls__plus').on('click', plusTovary);
   $('.product-quantity-controls__minus').on('click', minusTovary);
-  
-  function plusTovary(){ //увеличиваем кол-во товара
-    var article = $(this).attr('data-art');
-    cart[article]++;
-    localStorage.setItem('cart', JSON.stringify(cart));
-    showCart();
-  }
-
-  function minusTovary(){ //уменьшаем кол-во товаров
-    var article = $(this).attr('data-art');
-    if (cart[article]>1) {
-      cart[article]--;
-    }
-    else {
-      delete cart[article];
-    }
-    localStorage.setItem('cart', JSON.stringify(cart));
-    checkCart();
-    showCart();
-    
-  }
+  totalToHead();
 
 });
 
+function plusTovary(){ //увеличиваем кол-во товара
+  var article = $(this).attr('data-art');
+  cart[article]++;
+  localStorage.setItem('cart', JSON.stringify(cart));
+  showCart();
+}
+  
+
+function minusTovary(){ //уменьшаем кол-во товаров
+  var article = $(this).attr('data-art');
+  
+  if (cart[article]>1) {
+    cart[article]--;
+  }    
+  
+  else {
+    delete cart[article];
+  }
+  localStorage.setItem('cart', JSON.stringify(cart));
+  totalToHead()
+  checkCart();
+  showCart();
+  
+}
 }
 
-//showCart();
 
 
-/*
-function getTotal(total){
-  return(total);
-};
-getTotal(total);
-*/
+
+
+  
+
