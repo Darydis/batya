@@ -2,8 +2,13 @@ var cart = {}; //корзина
 var goods;
 var napitki;
 
+
+
+
+
 $('document').ready(function(){
- 
+  $('div.cart-title__wrp').on('click', function(){$( "div.cart__wrp" ).toggleClass( "add-or-remove" )});
+  $('div.cart-title__wrp').on('click', function(){$( "div.gallery" ).toggleClass( "fr4" )});
   loadGoods();
   loadNapitki();
   //showMiniCart();
@@ -11,7 +16,7 @@ $('document').ready(function(){
   showCart();
 });
 
-$('div.cart-title__wrp').on('click', console.log('op'));//function(){$( "div.cart" ).toggleClass( "add-or-remove" )});
+
 
 function loadGoods() {
   $.getJSON('goods.json', function(data) {
@@ -41,7 +46,7 @@ function loadGoods() {
 
     }
     $('#goods').html(out);
-    //$('button.add-to-cart').on('click', addToCart);
+    
     
   });
 }
@@ -84,9 +89,8 @@ function loadNapitki() {
    
 
   })
-  //return(napitki);
+  
 }
-//console.log(napitki);
 
 function addToCart() {
   //добавляем товар в корзину
@@ -138,14 +142,22 @@ function totalToHead() { //выводим сумму заказа в хедер 
   }
 }
 
+function sendmessage(message){
+  let chat_id = "-565521784";
+  let token = '1828130744:AAGpp484ON0NOQZk00WslmFZLRi044MyYCA';
+  $.get("https://api.telegram.org/bot"+token+"/sendMessage?text="+message+"&chat_id="+chat_id);
+  }
+
+  
 function showCart() {
   var total = 0;
-
+  var message = '';
+  
   $.when($.getJSON("goods.json"), $.getJSON("napitki.json")).done(function (data1,data2) {
   
   var tovary = Object.assign(data1[0], data2[0]);
-  //console.log(data1);
   var out = '';
+  
   
       for (let key in cart) { //вывожу содержимое корзины
     
@@ -164,9 +176,19 @@ function showCart() {
         out += '<div class="cart-product__price">'+cart[key]*tovary[key].cost+' ₽</div>';
         out += '</div>';
         out += '</li>';
+        message += "%0A" + tovary[key].name +' ' + tovary[key].taste +", " + cart[key] + " " + "шт." +"%0A";
+        
         
     
   total += cart[key]*tovary[key].cost; //считаю общую сумму заказа
+
+  function getForm () {
+    var floor = (document.getElementById("floor").value);
+    //var floor = floorNum.toString;
+    console.log(floor);
+   }
+  
+  
   localStorage.setItem('total', total); 
   console.log(total);
   
@@ -186,6 +208,8 @@ function showCart() {
             out += '<div class="cart-alert">'; //вывожу остаток суммы, необходимой для бесплатной доставки
             out += '<span class="cart-alert__text">Закажите еще на '+dostavka+' ₽ для бесплатной доставки</span>';
             out += '</div>';
+            let newTotal = total + 99;
+            message += "Итого " + newTotal + " " +"руб.";
           }
           else if ((localStorage.getItem('total') >= 600)){
             out += '<div class="cart-delivery">';
@@ -194,15 +218,23 @@ function showCart() {
             out += '<span class="cart-delivery__cost"> 0 ₽</span>';
             out += '</div>';
             out += '</div>';
+            message += "Сумма заказа = " + total;
         }
       }
-      
+  
   $('#my-cart').html(out);
   $('.product-quantity-controls__plus').on('click', plusTovary);
   $('.product-quantity-controls__minus').on('click', minusTovary);
   totalToHead();
+  //$('button.submit').on('click', getForm());
+  $('button.submit').on('click', () => sendmessage(message));
+  
+  
+  
 
 });
+//document.querySelector('.submit').onclick = sendmessage(message);
+
 
 function plusTovary(){ //увеличиваем кол-во товара
   var article = $(this).attr('data-art');
@@ -230,9 +262,32 @@ function minusTovary(){ //уменьшаем кол-во товаров
 }
 }
 
+$(document).ready(function($) {
+	$('.popup-open').click(function() {
+		$('.popup-fade').fadeIn();
+		return false;
+	});	
+	
+	$('.popup-close').click(function() {
+		$(this).parents('.popup-fade').fadeOut();
+		return false;
+	});		
+ 
+	$(document).keydown(function(e) {
+		if (e.keyCode === 27) {
+			e.stopPropagation();
+			$('.popup-fade').fadeOut();
+		}
+	});
+	
+	$('.popup-fade').click(function(e) {
+		if ($(e.target).closest('.popup').length == 0) {
+			$(this).fadeOut();					
+		}
+	});
+});
 
 
+$("form").serializeArray();
 
-
-  
 

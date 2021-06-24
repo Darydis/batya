@@ -9,47 +9,144 @@
     </head>
 </html>
 <body>
-    <div class="outer_container">
-        <div>
-            <h1>Оформление заказа</h1>
-            <hr>
-        </div>
-        <div class="form">
-            <form class="form" method="post" action="/send.php">
-                <div class="form__item">
-                    <input class="form__input" type="text" name="name" required>
-                    <label class="form__label">Ваше имя</label>
-                </div>
-                <div class="form__item">
-                    <input class="form__input" type="text" name="phone" required>
-                    <label class="form__label">Номер телефона</label>
-                </div>
-                <input class="form__input btn" type="submit" value="Отправить">
-                <input type="hidden" name="act" value="order">
-            </form>
-        </div>
-        <div class="cart">
-            <div class="cart_wrp" >
-                <div class="cart-title__wrp">
-                    <div class="cart-icon">
-                        <a href="#"><img src="img/icon_cart.svg"></a>
-                    </div>
-                    <div class="summa_zakaza" id="head-total">
-                        
-                    </div>
-                </div>
-                <ul class="cart__list" id="my-cart">
-
-                </ul>
-
-                <div class="cart-submit">
-                    <button type="button">
-                        Заказать
-                        <span class="cart-submit__total" id="submit"></span>
-                     </button>
-                </div>
-                
+    <div class="modal-container">
+        <div class="modal">
+            <div class="headline">
+                <h1>Оформление заказа</h1>
             </div>
-        </div> 
+            <div class="column-container">
+                <div class="left-column">
+                    <form>
+                        <div class="checkout-form__container">
+                            <div class="checkout-form__section checkout-form__short">
+                            
+                                <div class="form-field">
+                                    <div class="form-field__wrap">
+                                        <label class="label--def">
+                                            <input type="text" inputmode="text" class="input--def form-text__input form-text__input--name"> 
+                                            <span class="label-title--def is-required">
+                                            Имя
+                                            </span> 
+                                            <span class="label--def__hint"></span> <!---->
+                                        </label>
+                                    </div>
+                                    
+                                </div>
+                                <div class="form-field">
+                                    <div class="form-field__wrap">
+                                        <label class="label--def disabled">
+                                            <input type="tel" inputmode="numeric" pattern="[0-9]*" class="input--def filled"> 
+                                            <span class="label-title--def is-required">
+                                            Телефон
+                                            </span>
+                                            <span class="label--def__hint"></span> <!---->
+                                        </label>
+                                    </div> <!---->      
+                                </div>
+
+                                <div class="checkout-form__address-suggest">
+                                    <div class="address-suggest-simple__wrapper">
+                                        <label class="label--def address-suggest-simple__search-field">
+                                            <input type="text" class="input--def form-text__input filled"> 
+                                            <span class="label-title--def">Адрес доставки</span>
+                                        </label> <!----> <!----> <!---->
+                                    </div>
+                                </div>
+
+                                <div class="form-field is-short">
+                                    <div class="form-field__wrap">
+                                        <label class="label--def">
+                                            <input type="text" inputmode="text" class="input--def filled">
+                                            <span class="label-title--def">
+                                                Подъезд
+                                            </span>
+                                            <span class="label--def__hint">
+                                    
+                                            </span> <!---->
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-field is-short">
+                                    <div class="form-field__wrap">
+                                        <label class="label--def">
+                                            <input type="text" inputmode="text" class="input--def filled"> 
+                                            <span class="label-title--def">
+                                                Домофон
+                                            </span>
+                                            <span class="label--def__hint">
+                                    
+                                            </span> <!---->
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-field is-short">
+                                    <div class="form-field__wrap">
+                                        <label class="label--def">
+                                            <input type="text" inputmode="numeric" pattern="[0-9]*" class="input--def filled" id="floor"> 
+                                            <span class="label-title--def">
+                                            Этаж
+                                            </span>
+                                            <span class="label--def__hint">
+                                    
+                                            </span> <!---->
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-field is-short">
+                                    <div class="form-field__wrap">
+                                        <label class="label--def">
+                                            <input type="text" inputmode="numeric" pattern="[0-9]*" class="input--def filled"> 
+                                            <span class="label-title--def">
+                                                Квартира
+                                            </span>
+                                            <span class="label--def__hint">
+                                    
+                                            </span> <!---->
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="checkout-form__comment-container">
+                                    <div class="checkout-form__comment-title">Комментарий</div> 
+                                    <div contenteditable="true" placeholder="Напишите, как вас найти или пожелания для блюд..." class="checkout-form-comment__container">
+                                    </div>
+                                </div>
+                                
+                            </div> 
+                            <div class="checkout-form__submit-button" >
+                                <div class="checkout-form-button__container">
+                                    <button class="checkout-form-button__area green-btn--lg submit">
+                                        Заказать
+                                
+                                    </button>
+                                </div>
+                        </div>
+                        </div> 
+                    </form> 
+                </div>
+                <div class="right-column">
+                            <div class="cart-zakaz">
+                                <div class="cart_wrp" >
+                                    <div class="cart-title__wrp">
+                                        <h3>Ваш заказ</h3>
+                                    </div>
+                                    <ul class="cart__list" id="my-cart">
+                                        
+
+                                    </ul>
+                                    <div class="itogo">
+                                        <h3> Итого </h3> 
+                                        <div class="summa_zakaza" id="head-total">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
