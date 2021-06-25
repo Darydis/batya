@@ -3,9 +3,10 @@
     <head>
         <meta charset="utf8">
         <link rel="stylesheet" href="batya.css">
+        <link rel="stylesheet" href="hystmodal.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="script.js"></script>
-        <script src=""></script>
+       
     </head>
     <body>
         <div class="outer_container">
@@ -55,7 +56,7 @@
                         </div>-->
                    
 
-                        <div class="cart-submit">
+                        <div class="cart-submit" data-hystmodal="#myModal">
                             <button type="button">
                                 Заказать
                                 <span class="cart-submit__total"></span>
@@ -120,25 +121,7 @@
             <div class="cart"></div>
             <section class="container" id="dostoplata">
                 <h1>Доставка и оплата</h1>
-                <!--<div class="card">
-                    <div class="img_wrp">
-                        <div class="shaurmicon"></div>
-                        <img src="/img/shaurma.png">
-                    </div>
-                    <div class="card_info">
-                        <div class="card_title">
-                            <h4>Шаурма</h4>
-                            <p>Классическая</p>
-                        </div>
-                        <div class="description">
-                            <p>Курица, огурцы, помидоры, капуста, морковь по-корейски</p>
-                        </div>
-                        <div class="price_wrp">
-                            <p class="price">150 р</p>
-                            <button data-art="1" class="add-to-cart">В корзину</button>
-                        </div>
-                    </div>
-                </div>-->
+              
                 <hr>
                 <div class="dostavka_i_oplata">
                    
@@ -183,5 +166,156 @@
                 <div class="insta"></div>
             </div>
         </div>
+        <div class="hystmodal" id="myModal" aria-hidden="true">
+            <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                    <button data-hystclose class="hystmodal__close">Закрыть</button>
+                    <!-- Ваш HTML код модального окна -->
+                    <div class="modal-container">
+                        <div class="modal">
+                            <div class="headline">
+                                <h1>Оформление заказа</h1>
+                            </div>
+                            <div class="column-container">
+                                <div class="left-column">
+                                    <form>
+                                        <div class="checkout-form__container">
+                                            <div class="checkout-form__section checkout-form__short">
+                                            
+                                                <div class="form-field">
+                                                    <div class="form-field__wrap">
+                                                        <label class="label--def">
+                                                            <input required type="text" inputmode="text" class="input--def form-text__input form-text__input--name" id="name"> 
+                                                            <span class="label-title--def is-required">
+                
+                                                            Имя
+                                                            </span> 
+                                                            <span class="label--def__hint"></span> <!---->
+                                                        </label>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="form-field">
+                                                    <div class="form-field__wrap">
+                                                        <label class="label--def disabled">
+                                                            <input required type="tel" inputmode="numeric" pattern="[0-9]*" class="input--def filled" id="phonenumber"> 
+                                                            <span class="label-title--def is-required">
+                                                            Телефон
+                                                            </span>
+                                                            <span class="label--def__hint"></span> <!---->
+                                                        </label>
+                                                    </div> <!---->      
+                                                </div>
+                
+                                                <div class="checkout-form__address-suggest">
+                                                    <div class="address-suggest-simple__wrapper">
+                                                        <label class="label--def address-suggest-simple__search-field">
+                                                            <input required type="text" class="input--def form-text__input filled" id="street"> 
+                                                            <span class="label-title--def">Адрес доставки</span>
+                                                        </label> <!----> <!----> <!---->
+                                                    </div>
+                                                </div>
+                
+                                                <div class="form-field is-short">
+                                                    <div class="form-field__wrap">
+                                                        <label class="label--def">
+                                                            <input type="text" inputmode="text" class="input--def filled" id="entrance">
+                                                            <span class="label-title--def">
+                                                                Подъезд
+                                                            </span>
+                                                            <span class="label--def__hint">
+                                                    
+                                                            </span> <!---->
+                                                        </label>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="form-field is-short">
+                                                    <div class="form-field__wrap">
+                                                        <label class="label--def">
+                                                            <input type="text" inputmode="text" class="input--def filled" id="intercom"> 
+                                                            <span class="label-title--def">
+                                                                Домофон
+                                                            </span>
+                                                            <span class="label--def__hint">
+                                                    
+                                                            </span> <!---->
+                                                        </label>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="form-field is-short">
+                                                    <div class="form-field__wrap">
+                                                        <label class="label--def">
+                                                            <input type="text" inputmode="numeric" pattern="[0-9]*" class="input--def filled" id="floor"> 
+                                                            <span class="label-title--def">
+                                                            Этаж
+                                                            </span>
+                                                            <span class="label--def__hint">
+                                                    
+                                                            </span> <!---->
+                                                        </label>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="form-field is-short">
+                                                    <div class="form-field__wrap">
+                                                        <label class="label--def">
+                                                            <input type="text" inputmode="numeric" pattern="[0-9]*" class="input--def filled" id="flat"> 
+                                                            <span class="label-title--def">
+                                                                Квартира
+                                                            </span>
+                                                            <span class="label--def__hint">
+                                                    
+                                                            </span> <!---->
+                                                        </label>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="checkout-form__comment-container">
+                                                    <div class="checkout-form__comment-title">Комментарий</div> 
+                                                    <div contenteditable="true" placeholder="Напишите, как вас найти или пожелания для блюд..." class="checkout-form-comment__container" id="comment">
+                                                      
+                                                    </div>
+                                                </div>
+                                                
+                                            </div> 
+                                            <div class="checkout-form__submit-button" >
+                                                <div class="checkout-form-button__container">
+                                                    <button class="checkout-form-button__area green-btn--lg" data-hystmodal="#myModal"">
+                                                        Заказать
+                                                
+                                                    </button>
+                                                </div>
+                                        </div>
+                                        </div> 
+                                    </form> 
+                                </div>
+                                <div class="right-column">
+                                            <div class="cart-zakaz">
+                                                <div class="cart_wrp" >
+                                                    <div class="cart-title__wrp">
+                                                        <h3>Ваш заказ</h3>
+                                                    </div>
+                                                    <ul class="cart__list" id="my-cart">
+                                                        
+                
+                                                    </ul>
+                                                    <div class="itogo">
+                                                        <h3> Итого </h3> 
+                                                        <div class="summa_zakaza" id="head-total">
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="hystmodal.min.js"></script>
     </body>
 </html>
