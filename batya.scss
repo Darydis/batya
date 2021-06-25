@@ -33,13 +33,13 @@ h4 {
 
 @font-face { 
     font-family: 'TTSupermolotNeue'; 
-    src: url('./TTSupermolotNeue-Medium.woff2');    
+    src: url('./Fonts/TTSupermolotNeue-Medium.woff2');    
     font-weight: normal;
     font-style: 500;      }
 
 @font-face { 
     font-family: 'TTSupermolotNeue'; 
-    src: url('./TTSupermolotNeue-Regular.woff2');    
+    src: url('./Fonts/TTSupermolotNeue-Regular.woff2');    
     font-weight: normal;
     font-style: 400;      }
 
@@ -669,9 +669,15 @@ a {
     .filled {
         color: #2e2e33;
     }
+    
 }
 
-input, textarea, input:focus, textarea:focus {
+input:focus {
+    
+        border-bottom: 1px solid #2e2e33;
+}
+
+input, textarea, textarea:focus {
     background-color: transparent;
     outline: none;
     border: 0;
@@ -711,6 +717,7 @@ input, textarea, input:focus, textarea:focus {
 
     &__comment-container {
         width: 100%;
+        margin-top: 30px;
     }
     &__comment-title {
         font-size: 15px;
@@ -761,12 +768,12 @@ input, textarea, input:focus, textarea:focus {
 
 .headline {
     margin: 0 auto;
-    margin-left: 120px;
+    padding-left: 32px;
 }
 
 
 .right-column {
-    padding-left: 108px;
+    padding-left: 70px;
 }
 
 .column-container {

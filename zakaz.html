@@ -23,8 +23,9 @@
                                 <div class="form-field">
                                     <div class="form-field__wrap">
                                         <label class="label--def">
-                                            <input type="text" inputmode="text" class="input--def form-text__input form-text__input--name"> 
+                                            <input required type="text" inputmode="text" class="input--def form-text__input form-text__input--name" id="name"> 
                                             <span class="label-title--def is-required">
+
                                             Имя
                                             </span> 
                                             <span class="label--def__hint"></span> <!---->
@@ -35,7 +36,7 @@
                                 <div class="form-field">
                                     <div class="form-field__wrap">
                                         <label class="label--def disabled">
-                                            <input type="tel" inputmode="numeric" pattern="[0-9]*" class="input--def filled"> 
+                                            <input required type="tel" inputmode="numeric" pattern="[0-9]*" class="input--def filled" id="phonenumber"> 
                                             <span class="label-title--def is-required">
                                             Телефон
                                             </span>
@@ -47,7 +48,7 @@
                                 <div class="checkout-form__address-suggest">
                                     <div class="address-suggest-simple__wrapper">
                                         <label class="label--def address-suggest-simple__search-field">
-                                            <input type="text" class="input--def form-text__input filled"> 
+                                            <input required type="text" class="input--def form-text__input filled" id="street"> 
                                             <span class="label-title--def">Адрес доставки</span>
                                         </label> <!----> <!----> <!---->
                                     </div>
@@ -56,7 +57,7 @@
                                 <div class="form-field is-short">
                                     <div class="form-field__wrap">
                                         <label class="label--def">
-                                            <input type="text" inputmode="text" class="input--def filled">
+                                            <input type="text" inputmode="text" class="input--def filled" id="entrance">
                                             <span class="label-title--def">
                                                 Подъезд
                                             </span>
@@ -70,7 +71,7 @@
                                 <div class="form-field is-short">
                                     <div class="form-field__wrap">
                                         <label class="label--def">
-                                            <input type="text" inputmode="text" class="input--def filled"> 
+                                            <input type="text" inputmode="text" class="input--def filled" id="intercom"> 
                                             <span class="label-title--def">
                                                 Домофон
                                             </span>
@@ -98,7 +99,7 @@
                                 <div class="form-field is-short">
                                     <div class="form-field__wrap">
                                         <label class="label--def">
-                                            <input type="text" inputmode="numeric" pattern="[0-9]*" class="input--def filled"> 
+                                            <input type="text" inputmode="numeric" pattern="[0-9]*" class="input--def filled" id="flat"> 
                                             <span class="label-title--def">
                                                 Квартира
                                             </span>
@@ -111,14 +112,15 @@
 
                                 <div class="checkout-form__comment-container">
                                     <div class="checkout-form__comment-title">Комментарий</div> 
-                                    <div contenteditable="true" placeholder="Напишите, как вас найти или пожелания для блюд..." class="checkout-form-comment__container">
+                                    <div contenteditable="true" placeholder="Напишите, как вас найти или пожелания для блюд..." class="checkout-form-comment__container" id="comment">
+                                      
                                     </div>
                                 </div>
                                 
                             </div> 
                             <div class="checkout-form__submit-button" >
                                 <div class="checkout-form-button__container">
-                                    <button class="checkout-form-button__area green-btn--lg submit">
+                                    <button class="checkout-form-button__area green-btn--lg" id="submit2">
                                         Заказать
                                 
                                     </button>

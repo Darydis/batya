@@ -143,9 +143,21 @@ function totalToHead() { //выводим сумму заказа в хедер 
 }
 
 function sendmessage(message){
+  let name = $("#name").val();
+  let phonenumber = $("#phonenumber").val();
+  let street = $("#street").val();
+  let entrance = $("#entrance").val();
+  let intercom = $("#intercom").val();
+  let floor = $("#floor").val();
+  let flat = $("#flat").val();
+  let comment = $("#comment").html();
+  let person = "%0A" + "Имя:" + " " + name + "%0A" + "Номер:" + " " + phonenumber + "%0A" + "Адрес:" + " " + street + "%0A" + "Подъезд:" + " " + entrance + "%0A" + "Домофон:" + " " + intercom + "%0A" + "Этаж:" + " " + floor + "%0A" + "Квартира:" + " " + flat + "%0A"  + "Комментарий:" + " " + comment;
+  console.log(name);
+  
   let chat_id = "-565521784";
   let token = '1828130744:AAGpp484ON0NOQZk00WslmFZLRi044MyYCA';
-  $.get("https://api.telegram.org/bot"+token+"/sendMessage?text="+message+"&chat_id="+chat_id);
+  $.get("https://api.telegram.org/bot"+token+"/sendMessage?text="+message+" + "+person+" + &chat_id="+chat_id);
+  
   }
 
   
@@ -182,11 +194,6 @@ function showCart() {
     
   total += cart[key]*tovary[key].cost; //считаю общую сумму заказа
 
-  function getForm () {
-    var floor = (document.getElementById("floor").value);
-    //var floor = floorNum.toString;
-    console.log(floor);
-   }
   
   
   localStorage.setItem('total', total); 
@@ -227,7 +234,7 @@ function showCart() {
   $('.product-quantity-controls__minus').on('click', minusTovary);
   totalToHead();
   //$('button.submit').on('click', getForm());
-  $('button.submit').on('click', () => sendmessage(message));
+  $('button#submit2').on('click', function () {sendmessage(message)});
   
   
   
