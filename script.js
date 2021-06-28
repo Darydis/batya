@@ -269,35 +269,3 @@ function minusTovary(){ //уменьшаем кол-во товаров
 }
 }
 
-$(document).ready(function($) {
-	$('.popup-open').click(function() {
-		$('.popup-fade').fadeIn();
-		return false;
-	});	
-	
-	$('.popup-close').click(function() {
-		$(this).parents('.popup-fade').fadeOut();
-		return false;
-	});		
- 
-	$(document).keydown(function(e) {
-		if (e.keyCode === 27) {
-			e.stopPropagation();
-			$('.popup-fade').fadeOut();
-		}
-	});
-	
-	$('.popup-fade').click(function(e) {
-		if ($(e.target).closest('.popup').length == 0) {
-			$(this).fadeOut();					
-		}
-	});
-});
-
-
-const myModal = new HystModal({
-  linkAttributeName: "data-hystmodal",
-  // настройки (не обязательно), см. API
-});
-
-
