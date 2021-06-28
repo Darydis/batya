@@ -800,7 +800,7 @@ input, textarea, textarea:focus {
     height: 100%;
     margin: 0 auto;
     position: fixed;
-    display: block;
+    display: none;
     top: 0;
     bottom: 0;
 
@@ -813,6 +813,10 @@ input, textarea, textarea:focus {
     width: 1200px;
     margin: 0 auto;
     padding-bottom: 30px;
+}
+
+.hidden {
+    display: block;
 }
 
 .itogo {

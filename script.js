@@ -14,6 +14,7 @@ $('document').ready(function(){
   //showMiniCart();
   checkCart();
   showCart();
+  $('div.cart-submit').on('click', function(){$( "div.modal-container" ).addClass( "hidden" )});
 });
 
 
@@ -133,11 +134,13 @@ function totalToHead() { //выводим сумму заказа в хедер 
     else if (localStorage.getItem('total') >= 600) summary = localStorage.getItem('total');
     let out = '<span>'+summary+' ₽</span>';
   $('#head-total').html(out);
+  $('#head-total-modal').html(out);
   $('#submit').html(out);
   }
   else { //если в корзине ничего нет, то ничего не выводим
   out = '';
   $('#head-total').html(out);
+  $('#head-total-modal').html(out);
   $('#submit').html(out);
   }
 }
@@ -157,6 +160,7 @@ function sendmessage(message){
   let chat_id = "-565521784";
   let token = '1828130744:AAGpp484ON0NOQZk00WslmFZLRi044MyYCA';
   $.get("https://api.telegram.org/bot"+token+"/sendMessage?text="+message+" + "+person+" + &chat_id="+chat_id);
+  localStorage.clear();
   
   }
 
@@ -230,6 +234,7 @@ function showCart() {
       }
   
   $('#my-cart').html(out);
+  $('#my-cart-modal').html(out);
   $('.product-quantity-controls__plus').on('click', plusTovary);
   $('.product-quantity-controls__minus').on('click', minusTovary);
   totalToHead();
