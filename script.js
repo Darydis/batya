@@ -163,7 +163,6 @@ function getForm() {
 
 function sendmessage(message){
   getForm(person);
-  message += person;
   //message = cart_inner;
   let chat_id = "-565521784";
   let token = '1828130744:AAGpp484ON0NOQZk00WslmFZLRi044MyYCA';
