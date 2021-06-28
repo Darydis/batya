@@ -51,11 +51,10 @@ function loadGoods() {
     
   });
 }
-//console.log(goods);
+
 
 function loadNapitki() {
   $.getJSON('napitki.json', function(data) {
-    //console.log(data);
     let out = '';
     for (let key in data){
       
@@ -112,7 +111,7 @@ function addToCart() {
 
 function checkCart(){
   //Проверяю наличие корзины в localStorage
-  console.log(localStorage.getItem("cart"));
+  //console.log(localStorage.getItem("cart"));
   if (!localStorage.getItem("cart")){
     
     localStorage.setItem('total', 0 );
@@ -144,8 +143,9 @@ function totalToHead() { //выводим сумму заказа в хедер 
   $('#submit').html(out);
   }
 }
-
-function sendmessage(message){
+let person = '';
+function getForm() {
+  
   let name = $("#name").val();
   let phonenumber = $("#phonenumber").val();
   let street = $("#street").val();
@@ -154,12 +154,20 @@ function sendmessage(message){
   let floor = $("#floor").val();
   let flat = $("#flat").val();
   let comment = $("#comment").html();
-  let person = "%0A" + "Имя:" + " " + name + "%0A" + "Номер:" + " " + phonenumber + "%0A" + "Адрес:" + " " + street + "%0A" + "Подъезд:" + " " + entrance + "%0A" + "Домофон:" + " " + intercom + "%0A" + "Этаж:" + " " + floor + "%0A" + "Квартира:" + " " + flat + "%0A"  + "Комментарий:" + " " + comment;
-  console.log(name);
+  person = "%0A" + "Имя:" + " " + name + "%0A" + "Номер:" + " " + phonenumber + "%0A" + "Адрес:" + " " + street + "%0A" + "Подъезд:" + " " + entrance + "%0A" + "Домофон:" + " " + intercom + "%0A" + "Этаж:" + " " + floor + "%0A" + "Квартира:" + " " + flat + "%0A"  + "Комментарий:" + " " + comment;
   
+  
+  
+  
+}
+
+function sendmessage(message){
+  getForm(person);
+  message += person;
+  //message = cart_inner;
   let chat_id = "-565521784";
   let token = '1828130744:AAGpp484ON0NOQZk00WslmFZLRi044MyYCA';
-  $.get("https://api.telegram.org/bot"+token+"/sendMessage?text="+message+" + "+person+" + &chat_id="+chat_id);
+  $.get("https://api.telegram.org/bot"+token+"/sendMessage?text="+message+" + &chat_id="+chat_id);
   localStorage.clear();
   
   }
@@ -168,6 +176,7 @@ function sendmessage(message){
 function showCart() {
   var total = 0;
   var message = '';
+  var cart_inner = '';
   
   $.when($.getJSON("goods.json"), $.getJSON("napitki.json")).done(function (data1,data2) {
   
@@ -192,19 +201,23 @@ function showCart() {
         out += '<div class="cart-product__price">'+cart[key]*tovary[key].cost+' ₽</div>';
         out += '</div>';
         out += '</li>';
-        message += "%0A" + tovary[key].name +' ' + tovary[key].taste +", " + cart[key] + " " + "шт." +"%0A";
+        
         
         
     
-  total += cart[key]*tovary[key].cost; //считаю общую сумму заказа
+        total += cart[key]*tovary[key].cost; //считаю общую сумму заказа
+        cart_inner += tovary[key].name +' ' + tovary[key].taste +", " + cart[key] + " " + "шт." +"%0A";
 
   
-  
-  localStorage.setItem('total', total); 
-  console.log(total);
-  
+      localStorage.setItem('cart', cart); 
+       localStorage.setItem('total', total); 
+      
       }
-       if(!Object.keys(cart).length == 0) { //проверяю, есть ли товары в корзине
+      message = cart_inner;
+      
+      console.log(message);
+      
+      /*if(!Object.keys(cart).length == 0) { //проверяю, есть ли товары в корзине
         
           if (localStorage.getItem('total') < 600) {
            //вывожу стоимость доставки, если сумма заказа меньше 600
@@ -220,7 +233,7 @@ function showCart() {
             out += '<span class="cart-alert__text">Закажите еще на '+dostavka+' ₽ для бесплатной доставки</span>';
             out += '</div>';
             let newTotal = total + 99;
-            message += "Итого " + newTotal + " " +"руб.";
+            cart_inner += "Итого: " + newTotal + " " +"руб.";
           }
           else if ((localStorage.getItem('total') >= 600)){
             out += '<div class="cart-delivery">';
@@ -229,17 +242,18 @@ function showCart() {
             out += '<span class="cart-delivery__cost"> 0 ₽</span>';
             out += '</div>';
             out += '</div>';
-            message += "Сумма заказа = " + total;
+            cart_inner += "Итого: " + total;
         }
       }
-  
+  */
   $('#my-cart').html(out);
   $('#my-cart-modal').html(out);
   $('.product-quantity-controls__plus').on('click', plusTovary);
   $('.product-quantity-controls__minus').on('click', minusTovary);
   totalToHead();
   //$('button.submit').on('click', getForm());
-  $('button#submit2').on('click', function () {sendmessage(message)});
+  $('button#submit-modal').on('click', function () {sendmessage(message)});
+  //$('button#submit-modal').on('click', function () {console.log(message)});
   
   
   
