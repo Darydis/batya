@@ -190,14 +190,14 @@
                 </div>
                 <div class="column-container">
                     <div class="left-column">
-                        <form>
+                        <form onsubmit="return false;">
                             <div class="checkout-form__container">
                                 <div class="checkout-form__section checkout-form__short">
                                 
                                     <div class="form-field">
                                         <div class="form-field__wrap">
                                             <label class="label--def">
-                                                <input required type="text" inputmode="text" class="input--def form-text__input form-text__input--name" id="name"> 
+                                                <input type="text" inputmode="text" class="input--def form-text__input form-text__input--name" id="name"> 
                                                 <span class="label-title--def is-required">
     
                                                 Имя
@@ -210,7 +210,7 @@
                                     <div class="form-field">
                                         <div class="form-field__wrap">
                                             <label class="label--def disabled">
-                                                <input required type="tel" inputmode="numeric" pattern="[0-9]*" class="input--def filled" id="phonenumber"> 
+                                                <input type="tel" inputmode="numeric" pattern="[0-9]*" class="input--def filled" id="phonenumber"> 
                                                 <span class="label-title--def is-required">
                                                 Телефон
                                                 </span>
@@ -222,7 +222,7 @@
                                     <div class="checkout-form__address-suggest">
                                         <div class="address-suggest-simple__wrapper">
                                             <label class="label--def address-suggest-simple__search-field">
-                                                <input required type="text" class="input--def form-text__input filled" id="street"> 
+                                                <input type="text" class="input--def form-text__input filled" id="street"> 
                                                 <span class="label-title--def">Адрес доставки</span>
                                             </label> <!----> <!----> <!---->
                                         </div>
