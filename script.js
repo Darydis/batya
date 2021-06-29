@@ -163,7 +163,7 @@ function getForm() {
 
 function sendmessage(message){
   getForm(person);
-  //message = cart_inner;
+  message += person;
   let chat_id = "-565521784";
   let token = '1828130744:AAGpp484ON0NOQZk00WslmFZLRi044MyYCA';
   $.get("https://api.telegram.org/bot"+token+"/sendMessage?text="+message+" + &chat_id="+chat_id);
@@ -206,17 +206,19 @@ function showCart() {
     
         total += cart[key]*tovary[key].cost; //считаю общую сумму заказа
         cart_inner += tovary[key].name +' ' + tovary[key].taste +", " + cart[key] + " " + "шт." +"%0A";
-
+        message += localStorage.getItem('cart_inner');
+        console.log("message = ", message);
   
-      localStorage.setItem('cart', cart); 
-       localStorage.setItem('total', total); 
+     
+      localStorage.setItem(JSON.stringify('cart_inner'), cart_inner); 
+      localStorage.setItem('total', total); 
       
       }
-      message = cart_inner;
       
-      console.log(message);
       
-      /*if(!Object.keys(cart).length == 0) { //проверяю, есть ли товары в корзине
+      console.log(cart_inner);
+      
+      if(!Object.keys(cart).length == 0) { //проверяю, есть ли товары в корзине
         
           if (localStorage.getItem('total') < 600) {
            //вывожу стоимость доставки, если сумма заказа меньше 600
@@ -233,6 +235,7 @@ function showCart() {
             out += '</div>';
             let newTotal = total + 99;
             cart_inner += "Итого: " + newTotal + " " +"руб.";
+            
           }
           else if ((localStorage.getItem('total') >= 600)){
             out += '<div class="cart-delivery">';
@@ -243,8 +246,9 @@ function showCart() {
             out += '</div>';
             cart_inner += "Итого: " + total;
         }
+        
       }
-  */
+     
   $('#my-cart').html(out);
   $('#my-cart-modal').html(out);
   $('.product-quantity-controls__plus').on('click', plusTovary);
