@@ -97,13 +97,14 @@ body {
 
 @media screen and (min-width: 320px) and (max-width: 640px) {
   .header {
-    width: 100%;
+    width: 100vw;
     height: 80px;
     left: auto;
-    top: calc(100% - 180px);
+    bottom: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    z-index: 999;
   }
 }
 
@@ -567,6 +568,7 @@ hr {
     -webkit-box-pack: safe;
         -ms-flex-pack: safe;
             justify-content: safe;
+    width: unset;
   }
 }
 

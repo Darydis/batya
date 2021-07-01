@@ -4,7 +4,7 @@ $m: 1280px; // cart shown, 3 columns
 //$s: 1040px; //
 $s: 910px; // cart hidden, 3 columns
 $xs: 640px; // cart hidden, 2 columns
-$mob: 320px; //cart hidden, 1 column
+$mob: 320px; //cart hidden, 1 column, to 414px
 
 
 $yellow: #F3C623;
@@ -97,11 +97,12 @@ body {
      0px 3px 4px rgba(0, 0, 0, 0.12),
      0px 1px 5px rgba(233, 233, 233, 0.2);
      @media screen and (min-width: $mob) and (max-width: $xs) {
-        width: 100%;
+        width: 100vw;
         height: 80px;
         left: auto;
-        top: calc(100% - 180px);
+        bottom: 0;
         display: flex;
+        z-index: 999;
         
     }
  
@@ -470,6 +471,7 @@ nav li::hover {
         margin-top: 50px;
         margin: 0 auto;
         justify-content: safe;
+        width: unset;
       }
      
  }
