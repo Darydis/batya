@@ -217,7 +217,12 @@ hr {
   .gallery {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
-    max-width: 95%;
+    max-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
@@ -282,7 +287,7 @@ hr {
 
 @media screen and (min-width: 320px) and (max-width: 640px) {
   .card {
-    width: 180px;
+    width: 46%;
     height: 302px;
     padding: 16px;
     padding-bottom: 5px;
@@ -324,7 +329,7 @@ hr {
 
 @media screen and (min-width: 320px) and (max-width: 640px) {
   .photo {
-    height: 140px;
+    height: 75%;
   }
 }
 
@@ -360,6 +365,18 @@ hr {
   word-wrap: break-word;
 }
 
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .card_title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .card_title p {
   text-align: center;
   -ms-flex-item-align: center;
@@ -369,6 +386,14 @@ hr {
   height: 15px;
   margin: 0;
   font-size: 15px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .card_title p {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    padding-left: 0;
+  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 640px) {
@@ -547,6 +572,8 @@ hr {
           align-items: center;
   width: 60%;
   height: 163px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .footer h3 {
@@ -602,6 +629,12 @@ a {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .cart {
+    display: none;
+  }
 }
 
 .cart-zakaz {
