@@ -48,7 +48,13 @@ body {
   margin-left: 160px;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1872px) {
+  .container {
+    width: 1800px;
+  }
+}
+
+@media screen and (max-width: 1580px) {
   .container {
     width: 1440px;
   }
@@ -60,21 +66,22 @@ body {
   }
 }
 
-@media screen and (max-width: 1040px) {
-  .container {
-    width: 95%;
-  }
-}
-
 @media screen and (max-width: 910px) {
   .container {
     width: 95%;
   }
 }
 
-@media screen and (max-width: 524px) {
+@media screen and (max-width: 640px) {
   .container {
     width: 95%;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .container {
+    width: 95%;
+    margin: 0 auto;
   }
 }
 
@@ -88,8 +95,20 @@ body {
           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 1px 5px rgba(233, 233, 233, 0.2);
 }
 
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .header {
+    width: 100%;
+    height: 80px;
+    left: auto;
+    top: calc(100% - 180px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 .logo img {
-  width: 65px;
+  width: 45px;
   padding: 15px;
 }
 
@@ -106,11 +125,30 @@ body {
   margin: 0 auto;
 }
 
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .menu {
+    margin: 0 auto;
+    width: 95%;
+  }
+}
+
 nav ul {
   left: 0;
   position: absolute;
   padding-left: 0px;
   top: 25%;
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    left: unset;
+    top: 20px;
+    padding-left: unset;
+    position: relative;
+  }
 }
 
 nav li {
@@ -133,6 +171,15 @@ nav li {
           align-items: center;
 }
 
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  nav li {
+    height: 7px;
+    -webkit-transform: none;
+            transform: none;
+    width: 40px;
+  }
+}
+
 nav li::hover {
   font-size: 20px;
 }
@@ -141,6 +188,12 @@ nav li div {
   background-color: black;
   width: 1px;
   height: 23px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  nav li div {
+    background-color: transparent;
+  }
 }
 
 hr {
@@ -156,9 +209,60 @@ hr {
   margin-top: 50px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
   max-width: 70%;
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .gallery {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    max-width: 95%;
+  }
+}
+
+@media screen and (min-width: 910px) and (max-width: 1280px) {
+  .gallery {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    max-width: 90%;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 910px) {
+  .gallery {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    max-width: 85%;
+  }
+}
+
+@media screen and (min-width: 910px) and (max-width: 1280px) {
+  .gallery {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    max-width: 80%;
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1580px) {
+  .gallery {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1580px) and (max-width: 1872px) {
+  .gallery {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1872px) {
+  .gallery {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
 }
 
 .card {
@@ -175,14 +279,37 @@ hr {
           box-sizing: border-box;
 }
 
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .card {
+    width: 180px;
+    height: 302px;
+    padding: 16px;
+    padding-bottom: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}
+
 .img_wrp {
   width: 170px;
   height: 165px;
   margin: 0 auto;
 }
 
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .img_wrp {
+    height: 145px;
+  }
+}
+
 .card_info {
   height: 86px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .card_info {
+    height: 56px;
+  }
 }
 
 .photo {
@@ -192,6 +319,12 @@ hr {
 
 .photo #napitki {
   width: 60px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .photo {
+    height: 140px;
+  }
 }
 
 .drinks {
@@ -237,6 +370,12 @@ hr {
   font-size: 15px;
 }
 
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .card_title {
+    white-space: normal;
+  }
+}
+
 .description {
   font-size: 12px;
   font-weight: 300;
@@ -246,10 +385,25 @@ hr {
   line-height: 16px;
 }
 
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .description {
+    display: none;
+  }
+}
+
 .price {
   font-size: 21px;
   font-family: 'Geometria';
   font-weight: 500;
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .price {
+    position: absolute;
+    padding: 0px 54px;
+    margin-top: 8px;
+    width: 57px;
+  }
 }
 
 .card button {
@@ -268,6 +422,13 @@ hr {
   -webkit-box-shadow: 0px 2px 4px rgba(153, 153, 153, 0.14), 0px 3px 4px rgba(153, 153, 153, 0.12), 0px 1px 5px rgba(233, 233, 233, 0.2);
           box-shadow: 0px 2px 4px rgba(153, 153, 153, 0.14), 0px 3px 4px rgba(153, 153, 153, 0.12), 0px 1px 5px rgba(233, 233, 233, 0.2);
   cursor: pointer;
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .card button {
+    width: 188px;
+    font-size: 0pt;
+  }
 }
 
 .card:hover {
@@ -308,11 +469,28 @@ hr {
   padding-top: 20px;
 }
 
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  #dostavka, #oplata {
+    width: 95%;
+    height: 180px;
+    padding-right: 0;
+  }
+}
+
 .dostav_cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-top: 50px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .dostav_cards {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .dostavka_price {
@@ -348,10 +526,13 @@ hr {
   padding-left: -10px;
 }
 
+.footer__wrp {
+  background-color: #3c663b;
+}
+
 .footer {
   margin-top: 150px;
   color: white;
-  background-color: #3c663b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -377,6 +558,16 @@ hr {
 
 .footer .big {
   margin-top: 5px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .footer {
+    margin-top: 50px;
+    margin: 0 auto;
+    -webkit-box-pack: safe;
+        -ms-flex-pack: safe;
+            justify-content: safe;
+  }
 }
 
 .insta {
@@ -457,10 +648,20 @@ a {
   height: calc(100% - 72px);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  position: relative;
+  right: 0px;
+  -webkit-transition: left ease-out 0.4s;
+  transition: left ease-out 0.4s;
   overflow-y: auto;
   -webkit-box-shadow: 0px 2px 4px rgba(153, 153, 153, 0.14), 0px 3px 4px rgba(153, 153, 153, 0.12), 0px 1px 5px rgba(233, 233, 233, 0.2);
           box-shadow: 0px 2px 4px rgba(153, 153, 153, 0.14), 0px 3px 4px rgba(153, 153, 153, 0.12), 0px 1px 5px rgba(233, 233, 233, 0.2);
   background-color: white;
+}
+
+@media screen and (max-width: 1280px) {
+  .cart__wrp {
+    right: -360px;
+  }
 }
 
 /*.fr4 {
@@ -687,7 +888,10 @@ a {
 }
 
 .add-or-remove {
-  visibility: hidden;
+  position: relative;
+  right: -360px;
+  -webkit-transition: right ease-out 0.4s;
+  transition: right ease-out 0.4s;
 }
 
 .zakaz {
@@ -869,7 +1073,7 @@ input, textarea, textarea:focus {
   padding-bottom: 30px;
 }
 
-.hidden {
+.shown {
   display: block;
 }
 

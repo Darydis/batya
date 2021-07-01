@@ -1,9 +1,12 @@
-$lg: 1440px;
-$md: 1280px;
-$sm: 1040px;
-$xs: 910px;
-$xxs: 524px;
-$mob: 320px;
+$xl: 1872px; // 5 columns
+$l: 1580px; //4 columns
+$m: 1280px; // cart shown, 3 columns
+//$s: 1040px; //
+$s: 910px; // cart hidden, 3 columns
+$xs: 640px; // cart hidden, 2 columns
+$mob: 320px; //cart hidden, 1 column
+
+
 $yellow: #F3C623;
 $mint_light: #F4F8F8;
 $mint: #95D6A4;
@@ -62,20 +65,24 @@ body {
     margin-top: 0px;
     margin-left: 160px;
 
-    @media screen and (max-width: $lg) {
+    @media screen and (max-width: $xl) {
+        width: 1800px;
+      }
+    @media screen and (max-width: $l) {
       width: 1440px;
     }
-    @media screen and (max-width: $md) {
+    @media screen and (max-width: $m) {
       width: 1280px;
     }
-    @media screen and (max-width: $sm) {
+    @media screen and (max-width: $s) {
       width: 95%;
     }
     @media screen and (max-width: $xs) {
       width: 95%;
     }
-    @media screen and (max-width: $xxs) {
+    @media screen and (min-width: $mob) and (max-width: $xs) {
       width: 95%;
+      margin: 0 auto;
     }
   
   }
@@ -89,13 +96,20 @@ body {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14),
      0px 3px 4px rgba(0, 0, 0, 0.12),
      0px 1px 5px rgba(233, 233, 233, 0.2);
-    
+     @media screen and (min-width: $mob) and (max-width: $xs) {
+        width: 100%;
+        height: 80px;
+        left: auto;
+        top: calc(100% - 180px);
+        display: flex;
+        
+    }
  
     
 }
 
 .logo img{
-    width: 65px;
+    width: 45px;
     padding: 15px;
 }
 
@@ -104,6 +118,11 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    @media screen and (min-width: $mob) and (max-width: $xs) {
+    margin: 0 auto;
+    width: 95%;
+    
+    }
   
 }
 
@@ -113,6 +132,13 @@ nav ul {
    position: absolute;
    padding-left: 0px;
    top: 25%;
+   @media screen and (min-width: $mob) and (max-width: $xs) {
+    display: flex;
+    left: unset;
+    top: 20px;
+    padding-left: unset;
+    position: relative;
+}
    
 }
 
@@ -127,7 +153,11 @@ nav li {
     font-size: 15px;
     font-weight: 500;
     align-items: center;
-    
+    @media screen and (min-width: $mob) and (max-width: $xs) {
+        height: 7px;
+        transform: none;
+        width: 40px;
+    }
 }
 
 nav li::hover {
@@ -138,12 +168,15 @@ nav li::hover {
     background-color: black;
     width: 1px;
     height: 23px;
-
+    @media screen and (min-width: $mob) and (max-width: $xs) {
+    background-color: transparent;
+    }
  }
 
  hr {
      color: black;
      background-color: #cdcdcd;
+     
  }
 
  .content {
@@ -154,8 +187,33 @@ nav li::hover {
  .gallery {
      margin-top: 50px;
      display: grid;
-     grid-template-columns: 1fr 1fr 1fr;
      max-width: 70%;
+    @media screen and (min-width: $mob) and (max-width: $xs) {
+        grid-template-columns: 1fr 1fr;
+        max-width: 95%;
+    }
+    
+    @media screen and (min-width: $s) and (max-width: $m) {
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 90%;
+    }
+    @media screen and (min-width: $xs) and (max-width: $s) {
+        grid-template-columns: 1fr 1fr;
+        max-width: 85%;
+    }
+    @media screen and (min-width: $s) and (max-width: $m) {
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 80%;
+    }
+    @media screen and (min-width: $m) and (max-width: $l) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media screen and (min-width: $l) and (max-width: $xl) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    @media screen and (min-width: $xl) {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
  }
 
  .card {
@@ -169,19 +227,33 @@ nav li::hover {
      padding-bottom: 5px;
      margin-right: 15px;
      margin-bottom: 15px;
-     box-sizing: border-box;       
+     box-sizing: border-box;   
+     @media screen and (min-width: $mob) and (max-width: $xs) {
+        width: 180px;
+        height: 302px;
+        padding: 16px;
+        padding-bottom: 5px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }    
 }
 
 .img_wrp {
      width: 170px;
      height: 165px;
     margin: 0 auto;
+    @media screen and (min-width: $mob) and (max-width: $xs) {
+        height: 145px;
+    }  
 }
      
 
 
 .card_info {
      height: 86px;
+     @media screen and (min-width: $mob) and (max-width: $xs) {
+        height: 56px;
+    }  
 }
 
 .photo {
@@ -189,6 +261,9 @@ nav li::hover {
     margin: 0 auto;
     #napitki {
         width: 60px;
+    }
+    @media screen and (min-width: $mob) and (max-width: $xs) {
+        height: 140px;
     }
 }
 
@@ -235,6 +310,9 @@ nav li::hover {
        
    }
    
+   @media screen and (min-width: $mob) and (max-width: $xs) {
+       white-space: normal;
+   }
  }
 
  .description {
@@ -244,12 +322,21 @@ nav li::hover {
      padding: 0;
      color: #838383;
      line-height: 16px;
+     @media screen and (min-width: $mob) and (max-width: $xs) {
+        display: none;
+    }
  }
 
  .price {
      font-size: 21px;
      font-family: 'Geometria';
      font-weight: 500;
+     @media screen and (min-width: $mob) and (max-width: $xs) {
+        position: absolute;
+        padding: 0px 54px;
+        margin-top: 8px;
+        width: 57px;
+    }
      
  }
 
@@ -269,6 +356,10 @@ nav li::hover {
         0px 3px 4px rgba(153, 153, 153, 0.12),
         0px 1px 5px rgba(233, 233, 233, 0.2); 
         cursor: pointer;
+        @media screen and (min-width: $mob) and (max-width: $xs) {
+            width: 188px;
+            font-size: 0pt;
+        }
 
  }
 
@@ -306,11 +397,19 @@ nav li::hover {
      h4 {
          padding-top: 20px;
      }
+     @media screen and (min-width: $mob) and (max-width: $xs) {
+         width: 95%;
+         height: 180px;
+         padding-right: 0;
+     }
  }
 
  .dostav_cards {
     display: flex;
     margin-top: 50px;    
+    @media screen and (min-width: $mob) and (max-width: $xs) {
+        flex-direction: column;
+    }
  }
 
  .dostavka_price { 
@@ -343,10 +442,14 @@ nav li::hover {
     padding-left: -10px
  }
 
+.footer__wrp {
+    background-color: #3c663b;
+}
+
  .footer {
      margin-top: 150px;
      color: white;
-     background-color: #3c663b;
+     
      display: flex;
      padding-left: 160px;
      padding-right: 100px;
@@ -363,6 +466,12 @@ nav li::hover {
      .big {
          margin-top: 5px;
      }
+     @media screen and (min-width: $mob) and (max-width: $xs) {
+        margin-top: 50px;
+        margin: 0 auto;
+        justify-content: safe;
+      }
+     
  }
 
  .insta {
@@ -436,11 +545,18 @@ a {
     height: calc(100% - 72px);
     //padding: 0 10px 10px;
     box-sizing: border-box;
+    position: relative;
+    right: 0px;
+    transition: left ease-out 0.4s;
     overflow-y: auto;
     box-shadow: 0px 2px 4px rgba(153, 153, 153, 0.14),
     0px 3px 4px rgba(153, 153, 153, 0.12),
-     0px 1px 5px rgba(233, 233, 233, 0.2);
-     background-color: white;
+    0px 1px 5px rgba(233, 233, 233, 0.2);
+    background-color: white;
+    @media screen and (max-width: $m) {
+        right: -360px;
+    //transition: left ease-out 0.4s;
+    }
 }
 
 /*.fr4 {
@@ -637,7 +753,11 @@ a {
 }
 
 .add-or-remove {
-    visibility: hidden;
+    //visibility: hidden;
+    position: relative;
+    right: -360px;
+    transition: right ease-out 0.4s;
+    //transition: margin-right .4s ease;
 }
 
 .zakaz {
@@ -815,7 +935,7 @@ input, textarea, textarea:focus {
     padding-bottom: 30px;
 }
 
-.hidden {
+.shown {
     display: block;
 }
 
