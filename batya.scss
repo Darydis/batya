@@ -103,6 +103,7 @@ body {
         bottom: 0;
         display: flex;
         z-index: 999;
+        display: none;
         
     }
  
@@ -236,8 +237,8 @@ nav li::hover {
         height: 302px;
         padding: 16px;
         padding-bottom: 5px;
-        margin-right: 10px;
-        margin-bottom: 10px;
+        margin-right: 0;
+        margin-bottom: 0;
     }    
 }
 
@@ -247,6 +248,8 @@ nav li::hover {
     margin: 0 auto;
     @media screen and (min-width: $mob) and (max-width: $xs) {
         height: 145px;
+        width: unset;;
+        display: flex;
     }  
 }
      
@@ -344,7 +347,7 @@ nav li::hover {
      font-weight: 500;
      @media screen and (min-width: $mob) and (max-width: $xs) {
         position: absolute;
-        padding: 0px 54px;
+        padding: 0px 11%;
         margin-top: 8px;
         width: 57px;
     }
@@ -492,6 +495,7 @@ nav li::hover {
         padding-right: 20px;
         height: 100px;
         margin-bottom: 80px;
+        display: none;
         div {
             padding-right: 15px;
         }
