@@ -50,6 +50,10 @@ h4 {
 html {
     margin: 0;
     scroll-behavior: smooth;
+    @media screen and (min-width: $mob) and (max-width: $xs){
+    scroll-behavior: unset;
+    }
+
 }
 
 body {
@@ -58,6 +62,10 @@ body {
     font-family: 'TTSupermolotNeue';
     //overflow: scroll;
     
+}
+
+.outer_container {
+    margin: 0 auto;
 }
 
 .container {
@@ -103,7 +111,7 @@ body {
         bottom: 0;
         display: flex;
         z-index: 999;
-        display: none;
+        
         
     }
  
@@ -113,6 +121,9 @@ body {
 .logo img{
     width: 45px;
     padding: 15px;
+    @media screen and (min-width: $mob) and (max-width: $xs) {
+        display: none;
+    }
 }
 
 .menu {
@@ -123,6 +134,24 @@ body {
     @media screen and (min-width: $mob) and (max-width: $xs) {
     margin: 0 auto;
     width: 95%;
+    nav ul li#menu1 a {
+        background-image: url(img/icon_3.svg);  
+     }
+     
+    nav ul li#menu2 a {
+        background-image: url(img/icon_1.png);  
+      }
+    nav ul li#menu3 a {
+         background-image: url(img/icon_2.svg);  
+      }
+    nav ul li#menu4 a {
+        background-image: url(img/icon_3.svg);  
+     }
+     
+     nav li::hover {
+         font-size: 20px;  
+     }
+     
     
     }
   
@@ -137,7 +166,7 @@ nav ul {
    @media screen and (min-width: $mob) and (max-width: $xs) {
     display: flex;
     left: unset;
-    top: 20px;
+    //top: 20px;
     padding-left: unset;
     position: relative;
 }
@@ -159,12 +188,18 @@ nav li {
         height: 7px;
         transform: none;
         width: 40px;
+        a {
+            font-size: 0;
+            background-position: center;
+            height: 30px;
+            background-size: contain;
+            width: 100%;
+            background-repeat: no-repeat;
+        }
+        
     }
 }
 
-nav li::hover {
-    font-size: 20px;  
-}
 
  nav li div {
     background-color: black;
@@ -189,12 +224,14 @@ nav li::hover {
  .gallery {
      margin-top: 50px;
      display: grid;
-     max-width: 70%;
+     //max-width: 70%;
+   
     @media screen and (min-width: $mob) and (max-width: $xs) {
         grid-template-columns: 1fr 1fr;
         max-width: 100%;
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-around;
     }
     
     @media screen and (min-width: $s) and (max-width: $m) {
@@ -211,6 +248,7 @@ nav li::hover {
     }
     @media screen and (min-width: $m) and (max-width: $l) {
         grid-template-columns: 1fr 1fr 1fr;
+        max-width: 70%;
     }
     @media screen and (min-width: $l) and (max-width: $xl) {
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -233,12 +271,13 @@ nav li::hover {
      margin-bottom: 15px;
      box-sizing: border-box;   
      @media screen and (min-width: $mob) and (max-width: $xs) {
-        width: 46%;
-        height: 302px;
+        width: 48%;
+        height: 270px;
         padding: 16px;
         padding-bottom: 5px;
         margin-right: 0;
-        margin-bottom: 0;
+        margin-bottom: 10px;
+    
     }    
 }
 
@@ -247,7 +286,7 @@ nav li::hover {
      height: 165px;
     margin: 0 auto;
     @media screen and (min-width: $mob) and (max-width: $xs) {
-        height: 145px;
+        height: 50%;
         width: unset;;
         display: flex;
     }  
@@ -269,7 +308,7 @@ nav li::hover {
         width: 60px;
     }
     @media screen and (min-width: $mob) and (max-width: $xs) {
-        height: 75%;
+        height: 95%;
     }
 }
 
@@ -308,6 +347,7 @@ nav li::hover {
    @media screen and (min-width: $mob) and (max-width: $xs) {
        display: flex;
        flex-direction: column;
+       margin-top: 0;
    }
    
    p {
@@ -320,6 +360,7 @@ nav li::hover {
        @media screen and (min-width: $mob) and (max-width: $xs) {
            align-self: flex-start;
            padding-left: 0;
+           text-align: left;
        }
        
    }
@@ -347,9 +388,10 @@ nav li::hover {
      font-weight: 500;
      @media screen and (min-width: $mob) and (max-width: $xs) {
         position: absolute;
-        padding: 0px 11%;
-        margin-top: 8px;
-        width: 57px;
+        padding: 0;
+        width: 39%;
+        align-self: center;
+        text-align: center;;
     }
      
  }
@@ -397,6 +439,10 @@ nav li::hover {
  .price_wrp {
     justify-content: space-between;
     display: flex;
+    @media screen and (min-width: $mob) and (max-width: $xs){
+        margin-top: 20px;
+    }
+
  }
 
  #dostavka, #oplata {
@@ -412,10 +458,14 @@ nav li::hover {
          padding-top: 20px;
      }
      @media screen and (min-width: $mob) and (max-width: $xs) {
-         width: 80%;
-         height: 180px;
+         width: unset;
+         height: 160px;
          //padding-right: 0;
          padding: 30px;
+         margin-right: 0;
+         h4 {
+            padding-top: 0;
+        }
      }
  }
 
@@ -438,7 +488,7 @@ nav li::hover {
     padding-top: 0;
      }
      font-weight: 400px;
-     margin-bottom: 30px;
+     margin-bottom: 10px;
      margin-top: 15px;
  }
 
@@ -493,12 +543,16 @@ nav li::hover {
         width: unset;
         padding-left: 20px;
         padding-right: 20px;
-        height: 100px;
+        padding-top: 20px;
+        height: 80px;
         margin-bottom: 80px;
-        display: none;
-        div {
-            padding-right: 15px;
+        display: flex;
+        align-items: flex-start;
+        div:nth-child(2) {
+            padding-right: 5px;
+            width: 30%;
         }
+        
       }
     
      
@@ -536,7 +590,8 @@ a {
         padding: 0;
     }
     @media screen and (min-width: $mob) and (max-width: $xs){
-        display: none;
+        right: unset;
+        width: 100%;
     }
 }
 
@@ -566,6 +621,9 @@ a {
     font-weight: 600;
     font-size: 15px;
     background-color: $mint_light;
+    @media screen and (min-width: $mob) and (max-width: $xs) {
+        //display: none;
+    }
 } 
 
 .cart-icon {
@@ -573,6 +631,10 @@ a {
     img {
     width: 24px;
     }
+}
+
+.hidden {
+    display: none;
 }
 
 .cart__wrp {
@@ -590,6 +652,10 @@ a {
     @media screen and (max-width: $m) {
         right: -360px;
     //transition: left ease-out 0.4s;
+    }
+    @media screen and (min-width: $mob) and (max-width: $xs) {
+        height: 79vh;
+        right: unset;
     }
 }
 
@@ -810,11 +876,14 @@ a {
     font-size: 15px;
     padding-bottom: 5px;
     margin-bottom: 10px;
+    @media screen and (min-width: $mob) and (max-width: $xs) {
+        font-size: 12px;
+        margin-bottom: 25px;
+    }
 }
 
 .input--def {
     border-bottom: 1px solid #e3e4e6;
-    
     font-size: 15px;
     width: 100%;
     line-height: 17px;
@@ -823,7 +892,11 @@ a {
     .filled {
         color: #2e2e33;
     }
-    
+    @media screen and (min-width: $mob) and (max-width: $xs) {
+        font-size: 12px;
+        line-height: 15px;
+        padding: 0 5px 0;
+    }
 }
 
 input:focus {
@@ -861,10 +934,19 @@ input, textarea, textarea:focus {
 .is-short {
     display: inline-block;
     width: 22%;
+    @media screen and ( min-width: $mob) and (max-width: $xs) {
+        width: 18%;
+    }
 }
 
 .form-field.is-short:nth-child(2n) .form-field__wrap {
     padding-right: 4px;
+}
+
+.form-field:nth-child(-n+2){
+    @media screen and ( min-width: $mob) and (max-width: $xs) {
+        width: 100%;
+    }
 }
 
 .checkout-form {
@@ -872,6 +954,9 @@ input, textarea, textarea:focus {
     &__comment-container {
         width: 100%;
         margin-top: 30px;
+        @media screen and ( min-width: $mob) and (max-width: $xs) {
+            margin-top: 0;
+        }
     }
     &__comment-title {
         font-size: 15px;
@@ -897,6 +982,9 @@ input, textarea, textarea:focus {
         position: relative;
         width: 100%;
         height: 76px;
+        @media screen and (min-width: $mob) and (max-width: $xs) {
+            height: 65px;
+        }
     }
     
 }
@@ -928,6 +1016,9 @@ input, textarea, textarea:focus {
 
 .right-column {
     padding-left: 70px;
+    @media screen and (min-width: $mob) and (max-width: $xs){
+        display: none;
+    }
 }
 
 .column-container {
@@ -935,6 +1026,12 @@ input, textarea, textarea:focus {
     grid-template-columns: 2fr 1fr;
     margin: 0 auto;
     padding: 48px 32px 0;
+    @media screen and (min-width: $mob) and (max-width: $xs) {
+        display: flex;
+        flex-direction: column;
+        padding: 28px 0 0;
+        grid-template-columns: unset;
+    }
 }
 
 .popup-fade:before {
@@ -957,9 +1054,7 @@ input, textarea, textarea:focus {
     display: none;
     top: 0;
     bottom: 0;
-
-    background-color: rgba(0, 0, 0, 0.52);
-
+    
 }
 
 .modal {
@@ -967,6 +1062,11 @@ input, textarea, textarea:focus {
     width: 1200px;
     margin: 0 auto;
     padding-bottom: 30px;
+    @media screen and (min-width: $mob) and (max-width: $xs) {
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+    }
 }
 
 .shown {
@@ -995,6 +1095,9 @@ input, textarea, textarea:focus {
         margin: 0 auto;
         padding: 48px 96px 0;
         border-top: 0;
+        @media screen and (min-width: $mob) and (max-width: $xs) {
+            padding: 18px 16px 0;
+        }
     }
     &__submit-button {
         height: 72px;
@@ -1010,7 +1113,19 @@ input, textarea, textarea:focus {
         background-color: initial;
         box-shadow: initial;
         box-sizing: initial;
-      
+        @media screen and (min-width: $mob) and (max-width: $xs) {
+            padding: 8px 6px;
+            max-width: 100%;
+            height: unset;
+        }
+    }
+    &__container {
+        @media screen and (min-width: $mob) and (max-width: $xs) {
+            height: 74vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
     }
 }
 
@@ -1026,6 +1141,7 @@ input, textarea, textarea:focus {
     background-color: initial;
     box-shadow: initial;
     box-sizing: initial;
+    
 }
 
 .checkout-form-button__area {
@@ -1034,4 +1150,10 @@ input, textarea, textarea:focus {
     background-color: $mint;
     border: none;
     width: 100%;
+    border-radius: 5px;
+    @media screen and (min-width: $mob) and (max-width: $xs) {
+        width: 95vw;
+        
+    }
 }
+
