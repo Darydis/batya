@@ -213,6 +213,8 @@ $('document').ready(function(){
     $( "div.cart__wrp" ).addClass("hidden");
     $( "div.cart-title__wrp" ).addClass("hidden");
 
+    
+
     $('li#menu1').on('click', function(){ //клик на Шаурму - скрываем корзину и модалку
       $( "div.cart__wrp" ).removeClass("shown");
       $( "div.sections" ).removeClass("hidden");
@@ -420,6 +422,7 @@ function showCart() {
         out += '<div class="product-quantity-controls__container cart-product__quantity-slider">';
         out += '<button type="button" class="product-quantity-controls__minus" data-art="'+key+'"><svg width="24" height="24"><line x1="5" y1="11" x2="22" y2="11" stroke-width="2" stroke="#3c663b" /></svg></button>';
         out += '<span class="product-quantity-controls__value">'+cart[key]+'</span>';
+        
         out += '<button type="button" class="product-quantity-controls__plus" data-art="'+key+'"><svg width="24" height="24"><line x1="0" y1="11" x2="18" y2="11" stroke-width="2" stroke="#3c663b" /><line x1="9" y1="2" x2="9" y2="20" stroke-width="2" stroke="#3c663b" /></svg></button>';
         out += '</div>';
         out += '</div>';
@@ -441,6 +444,7 @@ function showCart() {
           "шт." +
           "%0A";
         console.log(cart);
+        console.log(key);
         localStorage.setItem("cart", JSON.stringify(cart));
         localStorage.setItem("total", total);
       }
