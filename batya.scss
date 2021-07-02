@@ -409,9 +409,10 @@ nav li::hover {
          padding-top: 20px;
      }
      @media screen and (min-width: $mob) and (max-width: $xs) {
-         width: 95%;
+         width: 80%;
          height: 180px;
-         padding-right: 0;
+         //padding-right: 0;
+         padding: 30px;
      }
  }
 
@@ -420,6 +421,8 @@ nav li::hover {
     margin-top: 50px;    
     @media screen and (min-width: $mob) and (max-width: $xs) {
         flex-direction: column;
+        margin-top: 20px;
+        margin-bottom: 40px;
     }
  }
 
@@ -440,6 +443,9 @@ nav li::hover {
     font-size: 40px;
     margin: 0;
     margin-top: 10px;
+    @media screen and (min-width: $mob) and (max-width: $xs) {
+        font-size: 17px;
+    }
     
  }
 
@@ -482,9 +488,15 @@ nav li::hover {
         margin: 0 auto;
         justify-content: safe;
         width: unset;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 100px;
+        margin-bottom: 80px;
+        div {
+            padding-right: 15px;
+        }
       }
-    padding-left: 30px;
-    padding-right: 30px;
+    
      
  }
 
@@ -492,6 +504,7 @@ nav li::hover {
      background-image: url(/img/insta.svg);
      height: 37px;
      width: 37px;
+     background-repeat: no-repeat;
  }
 
 a {

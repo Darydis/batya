@@ -497,9 +497,9 @@ hr {
 
 @media screen and (min-width: 320px) and (max-width: 640px) {
   #dostavka, #oplata {
-    width: 95%;
+    width: 80%;
     height: 180px;
-    padding-right: 0;
+    padding: 30px;
   }
 }
 
@@ -516,6 +516,8 @@ hr {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 40px;
   }
 }
 
@@ -538,6 +540,12 @@ hr {
   font-size: 40px;
   margin: 0;
   margin-top: 10px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .big {
+    font-size: 17px;
+  }
 }
 
 .bold {
@@ -572,8 +580,6 @@ hr {
           align-items: center;
   width: 60%;
   height: 163px;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 
 .footer h3 {
@@ -596,6 +602,13 @@ hr {
         -ms-flex-pack: safe;
             justify-content: safe;
     width: unset;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100px;
+    margin-bottom: 80px;
+  }
+  .footer div {
+    padding-right: 15px;
   }
 }
 
@@ -603,6 +616,7 @@ hr {
   background-image: url(/img/insta.svg);
   height: 37px;
   width: 37px;
+  background-repeat: no-repeat;
 }
 
 a {
