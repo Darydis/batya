@@ -206,7 +206,7 @@ let goods = {
 
 $('document').ready(function(){
   $('div.cart-title__wrp').on('click', function(){$( "div.cart__wrp" ).toggleClass( "add-or-remove" )});
-  
+  //скрываем корзину при клике на шапку
   
 
   if (window.screen.width <=414) { //мобильное меню
@@ -216,7 +216,9 @@ $('document').ready(function(){
     
 
     $('li#menu1').on('click', function(){ //клик на Шаурму - скрываем корзину и модалку
+      console.log("bad");
       $( "div.cart__wrp" ).removeClass("shown");
+      $( "div.cart__wrp" ).addClass("hidden");
       $( "div.sections" ).removeClass("hidden");
       $( "div.modal-container" ).addClass("hidden");
       $( "div.cart-title__wrp" ).addClass("hidden");
@@ -228,14 +230,6 @@ $('document').ready(function(){
       $( "div.modal-container" ).addClass("hidden");
       $( "div.cart-title__wrp" ).addClass("hidden");
     });
-
-    $('li#menu4').on('click', function(){ //клик на Корзину - скрываем контент и модалку
-      $( "div.cart__wrp" ).toggleClass("shown");
-      $( "div.sections" ).toggleClass("hidden");
-      $( "div.modal-container" ).addClass("hidden");
-      $( "div.cart-title__wrp" ).toggleClass("hidden");
-
-    });
     
     $('li#menu3').on('click', function(){ //клик на Доставку - скрываем корзину и модалку
       $( "div.cart__wrp" ).addClass("hidden");
@@ -243,6 +237,15 @@ $('document').ready(function(){
       $( "div.sections" ).removeClass("hidden");
       $( "div.modal-container" ).addClass("hidden");
       $( "div.cart-title__wrp" ).addClass("hidden");
+      $( "div.cart__wrp" ).addClass("hidden");
+    });
+
+    $('li#menu4').on('click', function(){ //клик на Корзину - скрываем контент и модалку
+      $( "div.cart__wrp" ).toggleClass("shown");
+      $( "div.sections" ).toggleClass("hidden");
+      $( "div.modal-container" ).addClass("hidden");
+      $( "div.cart-title__wrp" ).toggleClass("hidden");
+
     });
   }
 
@@ -256,7 +259,7 @@ $('document').ready(function(){
     
     $("div.modal-container").addClass("shown");
     
-        jQuery(function($){
+        jQuery(function($){ //модалка - оформление заказа
           $(document).mouseup(function (e){ // событие клика по веб-документу
             var div2 = $("#modal"); // тут указываем ID элемента
             if (!div2.is(e.target) // если клик был не по нашему блоку
