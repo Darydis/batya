@@ -74,13 +74,13 @@ body {
     margin-left: 160px;
 
     @media screen and (max-width: $xl) {
-        width: 1800px;
+        max-width: 1800px;
       }
     @media screen and (max-width: $l) {
-      width: 1440px;
+      max-width: 1440px;
     }
     @media screen and (max-width: $m) {
-      width: 1280px;
+      max-width: 1280px;
     }
     @media screen and (max-width: $s) {
       width: 95%;
@@ -135,17 +135,17 @@ body {
     margin: 0 auto;
     width: 95%;
     nav ul li#menu1 a {
-        background-image: url(img/icon_3.svg);  
+        background-image: url(img/icon_shaurma.svg);  
      }
      
     nav ul li#menu2 a {
-        background-image: url(img/icon_1.png);  
+        background-image: url(img/icon_napitki.svg);  
       }
     nav ul li#menu3 a {
-         background-image: url(img/icon_2.svg);  
+         background-image: url(img/icon_delivery.svg);  
       }
     nav ul li#menu4 a {
-        background-image: url(img/icon_3.svg);  
+        background-image: url(img/icon_cart.svg);  
      }
      
      nav li::hover {
@@ -187,11 +187,11 @@ nav li {
     @media screen and (min-width: $mob) and (max-width: $xs) {
         height: 7px;
         transform: none;
-        width: 40px;
+        width: 50px;
         a {
             font-size: 0;
             background-position: center;
-            height: 30px;
+            height: 40px;
             background-size: contain;
             width: 100%;
             background-repeat: no-repeat;
@@ -252,6 +252,7 @@ nav li {
     }
     @media screen and (min-width: $l) and (max-width: $xl) {
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        max-width: 80%;
     }
     @media screen and (min-width: $xl) {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -361,6 +362,7 @@ nav li {
            align-self: flex-start;
            padding-left: 0;
            text-align: left;
+           
        }
        
    }
@@ -391,7 +393,8 @@ nav li {
         padding: 0;
         width: 39%;
         align-self: center;
-        text-align: center;;
+        text-align: center;
+        margin: 0;
     }
      
  }
@@ -583,6 +586,7 @@ a {
     right: 0;
     width: 344px;
     text-align: center;
+    z-index: 998;
     
      ol, ul {
         list-style: none;
@@ -1054,6 +1058,7 @@ input, textarea, textarea:focus {
     display: none;
     top: 0;
     bottom: 0;
+    z-index: 999;
     
 }
 
@@ -1071,6 +1076,8 @@ input, textarea, textarea:focus {
 
 .shown {
     display: block;
+    background-color: rgba(0, 0, 0, 0.32);
+    
 }
 
 .itogo {
@@ -1157,3 +1164,10 @@ input, textarea, textarea:focus {
     }
 }
 
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-y {
+    overflow-y: scroll;
+}

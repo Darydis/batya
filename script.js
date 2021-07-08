@@ -207,18 +207,21 @@ let goods = {
 $('document').ready(function(){
   $('div.cart-title__wrp').on('click', function(){$( "div.cart__wrp" ).toggleClass( "add-or-remove" )});
   //скрываем корзину при клике на шапку
-  
+
 
   if (window.screen.width <=414) { //мобильное меню
-    $( "div.cart__wrp" ).addClass("hidden");
+    $( "div.cart" ).toggleClass("hidden");
     $( "div.cart-title__wrp" ).addClass("hidden");
-
     
+    $('p.price').on('click', addToCart);
+    $('div.price_wrp').on('click', addToCart);
+    
+
 
     $('li#menu1').on('click', function(){ //клик на Шаурму - скрываем корзину и модалку
       console.log("bad");
       $( "div.cart__wrp" ).removeClass("shown");
-      $( "div.cart__wrp" ).addClass("hidden");
+      $( "div.cart" ).addClass("hidden");
       $( "div.sections" ).removeClass("hidden");
       $( "div.modal-container" ).addClass("hidden");
       $( "div.cart-title__wrp" ).addClass("hidden");
@@ -238,14 +241,15 @@ $('document').ready(function(){
       $( "div.modal-container" ).addClass("hidden");
       $( "div.cart-title__wrp" ).addClass("hidden");
       $( "div.cart__wrp" ).addClass("hidden");
+      $( "div.cart" ).addClass("hidden");
     });
 
     $('li#menu4').on('click', function(){ //клик на Корзину - скрываем контент и модалку
+      $( "div.cart" ).removeClass("hidden");
       $( "div.cart__wrp" ).toggleClass("shown");
       $( "div.sections" ).toggleClass("hidden");
       $( "div.modal-container" ).addClass("hidden");
       $( "div.cart-title__wrp" ).toggleClass("hidden");
-
     });
   }
 
@@ -258,6 +262,9 @@ $('document').ready(function(){
     
     
     $("div.modal-container").addClass("shown");
+    $("body").addClass("overflow-hidden");
+    $("div.modal").addClass("overflow-y");
+
     
         jQuery(function($){ //модалка - оформление заказа
           $(document).mouseup(function (e){ // событие клика по веб-документу

@@ -60,19 +60,19 @@ body {
 
 @media screen and (max-width: 1872px) {
   .container {
-    width: 1800px;
+    max-width: 1800px;
   }
 }
 
 @media screen and (max-width: 1580px) {
   .container {
-    width: 1440px;
+    max-width: 1440px;
   }
 }
 
 @media screen and (max-width: 1280px) {
   .container {
-    width: 1280px;
+    max-width: 1280px;
   }
 }
 
@@ -148,16 +148,16 @@ body {
     width: 95%;
   }
   .menu nav ul li#menu1 a {
-    background-image: url(img/icon_3.svg);
+    background-image: url(img/icon_shaurma.svg);
   }
   .menu nav ul li#menu2 a {
-    background-image: url(img/icon_1.png);
+    background-image: url(img/icon_napitki.svg);
   }
   .menu nav ul li#menu3 a {
-    background-image: url(img/icon_2.svg);
+    background-image: url(img/icon_delivery.svg);
   }
   .menu nav ul li#menu4 a {
-    background-image: url(img/icon_3.svg);
+    background-image: url(img/icon_cart.svg);
   }
   .menu nav li::hover {
     font-size: 20px;
@@ -207,12 +207,12 @@ nav li {
     height: 7px;
     -webkit-transform: none;
             transform: none;
-    width: 40px;
+    width: 50px;
   }
   nav li a {
     font-size: 0;
     background-position: center;
-    height: 30px;
+    height: 40px;
     background-size: contain;
     width: 100%;
     background-repeat: no-repeat;
@@ -297,6 +297,7 @@ hr {
   .gallery {
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 80%;
   }
 }
 
@@ -474,6 +475,7 @@ hr {
         -ms-grid-row-align: center;
         align-self: center;
     text-align: center;
+    margin: 0;
   }
 }
 
@@ -700,6 +702,7 @@ a {
   right: 0;
   width: 344px;
   text-align: center;
+  z-index: 998;
 }
 
 .cart ol, .cart ul {
@@ -1247,6 +1250,7 @@ input, textarea, textarea:focus {
   display: none;
   top: 0;
   bottom: 0;
+  z-index: 999;
 }
 
 .modal {
@@ -1266,6 +1270,7 @@ input, textarea, textarea:focus {
 
 .shown {
   display: block;
+  background-color: rgba(0, 0, 0, 0.32);
 }
 
 .itogo {
@@ -1375,5 +1380,13 @@ input, textarea, textarea:focus {
   .checkout-form-button__area {
     width: 95vw;
   }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-y {
+  overflow-y: scroll;
 }
 /*# sourceMappingURL=batya.css.map */
